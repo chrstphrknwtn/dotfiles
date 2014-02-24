@@ -51,10 +51,10 @@ defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClic
 defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool false
 
 # Set a blazingly fast keyboard repeat rate
-defaults write NSGlobalDomain KeyRepeat -float 2
+defaults write NSGlobalDomain KeyRepeat -int 0
 
 # Set a short delay until keyboard repeat rate
-defaults write NSGlobalDomain InitialKeyRepeat -int 25;
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
 ###############################################################################
 # Screen #
@@ -74,7 +74,7 @@ defaults write com.apple.screencapture disable-shadow -bool false
 ###############################################################################
 
 # Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
-defaults write com.apple.finder QuitMenuItem -bool true
+defaults write com.apple.finder QuitMenuItem -bool false
 
 # Finder: disable window animations and Get Info animations
 defaults write com.apple.finder DisableAllAnimations -bool true
@@ -82,11 +82,11 @@ defaults write com.apple.finder DisableAllAnimations -bool true
 # Expose / Mission Control: Don't animate
 defaults write com.apple.dock expose-animation-duration -float 0
 
-# Show icons for hard drives, servers, and removable media on the desktop
-defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
-defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
-defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
-defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
+# Do not show icons for hard drives, servers, and removable media on the desktop
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
+defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
+defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
+defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
 
 # Finder: show status bar
 defaults write com.apple.finder ShowStatusBar -bool true
@@ -125,8 +125,8 @@ chflags nohidden ~/Library
 # Dock #
 ###############################################################################
 
-# Set the icon size of Dock items to 36 pixels
-defaults write com.apple.dock tilesize -int 36
+# Set the icon size of Dock items to 24 pixels
+defaults write com.apple.dock tilesize -int 24
 
 # Enable spring loading for all Dock items
 defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
@@ -139,8 +139,9 @@ defaults write com.apple.dock launchanim -bool false
 
 # Remove the auto-hiding Dock delay
 defaults write com.apple.Dock autohide-delay -int 0
+
 # Set a fast animation for hiding/showing the Dock
-defaults write com.apple.dock autohide-time-modifier -float 0.4
+defaults write com.apple.dock autohide-time-modifier -float 0.2
 
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
