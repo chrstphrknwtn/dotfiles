@@ -52,6 +52,8 @@ export PATH='/usr/local/bin:/usr/local/sbin:/Users/ckn/.rvm/bin:/usr/local/share
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+# Some aliases
+alias ajfgit='git config user.name "George Crabtree" && git config user.email gcrabtree@ajfpartnership.com.au'
 
 # git sync
 gs() {
@@ -76,4 +78,3 @@ gs() {
   echo "\n\033[0;34mgit push origin master\033[0m"
   git push origin master || { return 1; }
 }
-
