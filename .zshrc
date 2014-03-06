@@ -43,6 +43,7 @@ ZSH_THEME="ckn"
 plugins=(git z zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
+source ~/Dropbox/AppSupport/Terminal/k/k.sh
 
 # Customize to your needs...
 export PATH='/usr/local/bin:/usr/local/sbin:/Users/ckn/.rvm/bin:/usr/local/share/npm/bin:/usr/bin:/bin:/sbin:/usr/sbin:$HOME/.rvm/bin:$PATH'
