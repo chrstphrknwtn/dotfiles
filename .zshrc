@@ -35,13 +35,15 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # Git
 # -----------------------------------------------------------------------------
 
+export GIT_MERGE_AUTOEDIT=no
+
 # Temporarily set git config for AJF git server
 ajfgit() {
   if [ -f './.git/config' ];
   then
     git config user.name "Christopher Newton" || { return 1; }
     git config user.email cnewton@ajfpartnership.com.au || { return 1; }
-    echo "\nSetting local Git Config\nUsername: \033[0;34mChristopher Newton\033[0m\nEmail: \033[0;34m    cnewton@ajfpartnership.com.au\033[0m\n"
+    echo "\nSetting local Git Config\nUsername: \033[0;34mChristopher Newton\033[0m\nEmail: \033[0;34m   cnewton@ajfpartnership.com.au\033[0m\n"
   else
      echo "\n\033[0;31mNo git repository found in this directory.\033[0m\n"
      return 1;
@@ -62,6 +64,8 @@ compdef g=git
 
 # git sync
 gs() {
+  CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD);
+
   if [ ! $1 ]
     then
     echo "\n\033[0;31mYou must enter a commit message.\033[0m"
@@ -74,11 +78,11 @@ gs() {
   echo "\n\033[0;34mgit commit -m \033[0m\033[0;33m$1\033[0m"
   git commit -m $1 || { return 1; }
 
-  echo "\n\033[0;34mgit pull origin master\033[0m"
-  git pull origin master || { return 1; }
+  echo "\n\033[0;34mgit pull origin $CURRENT_BRANCH\033[0m"
+  git pull origin $CURRENT_BRANCH || { return 1; }
 
-  echo "\n\033[0;34mgit push origin master\033[0m"
-  git push origin master || { return 1; }
+  echo "\n\033[0;34mgit push origin $CURRENT_BRANCH\033[0m"
+  git push origin $CURRENT_BRANCH || { return 1; }
 }
 
 alias gstat=git status -s --ignored
