@@ -16,11 +16,11 @@ alias reload="source ~/.zshrc"
 # Serve some static stuff from CWD fast
 server() {
   if [ "$1" != "" ]
-    then
-      python -m SimpleHTTPServer $1
-    else
-      python -m SimpleHTTPServer
-    fi
+  then
+    python -m SimpleHTTPServer $1
+  else
+    python -m SimpleHTTPServer
+  fi
 }
 
 # -----------------------------------------------------------------------------
@@ -34,12 +34,6 @@ export PATH='/usr/local/bin:/usr/local/sbin:/Users/ckn/.rvm/bin:/usr/local/share
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-
-
-# -----------------------------------------------------------------------------
-# Aliases
-# -----------------------------------------------------------------------------
-
 
 # -----------------------------------------------------------------------------
 # Git
