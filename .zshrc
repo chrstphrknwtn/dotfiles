@@ -13,6 +13,16 @@ source ~/Dropbox/AppSupport/Terminal/k/k.sh
 # Reload zsh profile
 alias reload="source ~/.zshrc"
 
+# Serve some static stuff from CWD fast
+server() {
+  if [ "$1" != "" ]
+    then
+      python -m SimpleHTTPServer $1
+    else
+      python -m SimpleHTTPServer
+    fi
+}
+
 # -----------------------------------------------------------------------------
 # Path
 # -----------------------------------------------------------------------------
