@@ -14,7 +14,7 @@ source ~/Dropbox/AppSupport/Terminal/k/k.sh
 alias reload="source ~/.zshrc"
 
 # Serve some static stuff from CWD fast
-server() {
+serve() {
   if [ "$1" != "" ]
   then
     python -m SimpleHTTPServer $1
