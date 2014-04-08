@@ -10,18 +10,8 @@ plugins=(z zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 source ~/Dropbox/AppSupport/Terminal/k/k.sh
 
-# Reload zsh profile
+# Reload this file
 alias reload="source ~/.zshrc"
-
-# Serve some static stuff from CWD fast
-serve() {
-  if [ "$1" != "" ]
-  then
-    python -m SimpleHTTPServer $1
-  else
-    python -m SimpleHTTPServer
-  fi
-}
 
 # -----------------------------------------------------------------------------
 # Path
@@ -29,8 +19,6 @@ serve() {
 
 # Customize to your needs...
 export PATH='/usr/local/bin:/usr/local/sbin:$HOME/.rvm/bin:/usr/local/share/npm/bin:/usr/bin:/bin:/sbin:/usr/sbin:$PATH'
-
-# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -101,6 +89,16 @@ gv() {
 # -----------------------------------------------------------------------------
 # Random
 # -----------------------------------------------------------------------------
+
+# Serve some static stuff from CWD fast
+serve() {
+  if [ "$1" != "" ]
+  then
+    python -m SimpleHTTPServer $1
+  else
+    python -m SimpleHTTPServer
+  fi
+}
 
 colortest() {
   echo -en "\n   +  "
