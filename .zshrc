@@ -28,7 +28,7 @@ serve() {
 # -----------------------------------------------------------------------------
 
 # Customize to your needs...
-export PATH='/usr/local/bin:/usr/local/sbin:/Users/ckn/.rvm/bin:/usr/local/share/npm/bin:/usr/bin:/bin:/sbin:/usr/sbin:$HOME/.rvm/bin:$PATH'
+export PATH='/usr/local/bin:/usr/local/sbin:$HOME/.rvm/bin:/usr/local/share/npm/bin:/usr/bin:/bin:/sbin:/usr/sbin:$PATH'
 
 # PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
