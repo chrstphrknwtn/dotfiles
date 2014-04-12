@@ -29,19 +29,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 export GIT_MERGE_AUTOEDIT=no
 
-# Temporarily set git config for AJF git server
-ajfgit() {
-  if [ -f './.git/config' ];
-  then
-    git config user.name "Christopher Newton" || { return 1; }
-    git config user.email cnewton@ajfpartnership.com.au || { return 1; }
-    echo "\nSetting local Git Config\nUsername: \033[0;34mChristopher Newton\033[0m\nEmail: \033[0;34m   cnewton@ajfpartnership.com.au\033[0m\n"
-  else
-     echo "\n\033[0;31mNo git repository found in this directory.\033[0m\n"
-     return 1;
-  fi
-}
-
 # No arguments: `git status`
 # With arguments: acts like `git`
 g() {
