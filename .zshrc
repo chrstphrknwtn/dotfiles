@@ -81,7 +81,7 @@ gv() {
 alias db-mongo="mongod --config /usr/local/etc/mongod.conf"
 alias db-redis="redis-server /usr/local/etc/redis.conf"
 
-# Serve some static stuff from CWD fast
+# Serve some static stuff from CWD fast with optional port argument
 serve() {
   if [ "$1" != "" ]
   then
