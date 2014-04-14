@@ -8,7 +8,7 @@ ZSH_THEME="ckn"
 plugins=(z zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
-source ~/Dropbox/AppSupport/Terminal/k/k.sh
+source ~/Dropbox/Apps/Terminal/k/k.sh
 
 # Reload this file
 alias reload="source ~/.zshrc"
