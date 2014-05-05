@@ -111,3 +111,6 @@ colortest() {
   done
   echo -e "\n"
 }
+
+# Update everything
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; sudo npm update npm -g; sudo npm update -g'
