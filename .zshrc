@@ -77,6 +77,9 @@ gv() {
 # Random
 # -----------------------------------------------------------------------------
 
+# Open CWD in sublime
+alias o="subl ."
+
 # DB aliases
 alias db-mongo="mongod --config /usr/local/etc/mongod.conf"
 alias db-redis="redis-server /usr/local/etc/redis.conf"
