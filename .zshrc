@@ -64,13 +64,16 @@ gs() {
   git push origin $CURRENT_BRANCH || { return 1; }
 }
 
-alias gstat=git status -s --ignored
-
 # git verbs
 # remind me of useful verbs to prefix gits commits
 gv() {
  echo "\033[0;34madd, remove, update, refactor, fix\033[0m";
 }
+
+# git log verbose
+alias glg='git log --graph --decorate --all --pretty="%C(yellow)%h%C(auto)%d %C(blue)%s %Cgreen%cr %Creset%cn"'
+alias glv='git log --decorate --all --pretty="%C(yellow)%h %>(14)%Cgreen%cr%C(auto)%d %C(blue)%s %Creset%cn"'
+alias gl='git --no-pager log --decorate --all --pretty="%C(yellow)%h %>(14)%Cgreen%cr%C(auto)%d %C(blue)%s %Creset%cn" -20'
 
 
 # -----------------------------------------------------------------------------
