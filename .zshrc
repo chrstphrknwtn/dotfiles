@@ -97,6 +97,15 @@ serve() {
   fi
 }
 
+serve-php() {
+  if [ "$1" != "" ]
+  then
+    php -S localhost:$1
+  else
+    php -S localhost:8000
+  fi
+}
+
 colortest() {
   echo -en "\n   +  "
   for i in {0..35}; do
