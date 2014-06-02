@@ -97,12 +97,31 @@ serve() {
   fi
 }
 
+# Serve php from CWD with optional port argument
 serve-php() {
   if [ "$1" != "" ]
   then
     php -S localhost:$1
   else
     php -S localhost:8000
+  fi
+}
+
+# Quickly make a directory with yeoman generated app to play with
+play() {
+  if [ $1 ]
+    then
+    if [ $2 ]
+      then
+      NAME=$1-$2
+    else
+      NAME=$1-$[($RANDOM % 13843) + 1]
+    fi
+    cd ~/Workspace/dev && mkdir $NAME && cd $_
+    yo $1
+    subl .
+  else
+    cd ~/Workspace/dev && mkdir yeah-$[($RANDOM % 13843) + 1] && cd $_
   fi
 }
 
