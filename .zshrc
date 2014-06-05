@@ -147,7 +147,7 @@ colortest() {
 }
 
 # Update everything
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; sudo npm update npm -g; sudo npm update -g'
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g;'
 
 
 ## rvm
