@@ -18,7 +18,7 @@ alias reload="source ~/.zshrc"
 # -----------------------------------------------------------------------------
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/local/sbin:$HOME/.rvm/bin:/usr/bin:/bin:/sbin:/usr/sbin:$HOME/npm/bin:/usr/local/heroku/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/sbin:/usr/sbin:$HOME/npm/bin:/usr/local/heroku/bin:$PATH
 
 # -----------------------------------------------------------------------------
 # Git
@@ -145,8 +145,3 @@ colortest() {
 
 # Update everything
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g;'
-
-
-## rvm
-
-[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm # Load RVM into a shell session *as a function*
