@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bassh
 
 # An 'osx setup lite' for machines where you don't have admin rights
 
