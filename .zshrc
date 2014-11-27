@@ -32,7 +32,7 @@ g() {
   if [[ $# > 0 ]]; then
     git $@
   else
-    git status -s --ignored
+    git status -s
   fi
 }
 # Complete g like git
