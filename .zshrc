@@ -17,8 +17,18 @@ alias reload="source ~/.zshrc"
 # Path
 # -----------------------------------------------------------------------------
 
-# Customize to your needs...
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/sbin:/usr/sbin:$HOME/npm/bin:/usr/local/heroku/bin:/usr/local/go/bin:$PATH
+export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/usr/local/sbin
+export PATH=$PATH:/usr/bin
+export PATH=$PATH:/bin
+export PATH=$PATH:/sbin
+export PATH=$PATH:/usr/sbin
+export PATH=$PATH:$HOME/npm/bin
+export PATH=$PATH:/usr/local/heroku/bin
+export PATH=$PATH:/usr/local/go/bin
+
+export GOPATH=$HOME/Workspace/Dev/go
+export PATH=$PATH:$GOPATH/bin
 
 # -----------------------------------------------------------------------------
 # Git
