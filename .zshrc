@@ -77,6 +77,28 @@ gv() {
  echo "\033[0;34madd, remove, update, refactor, fix\033[0m";
 }
 
+# Pull request
+# Usage: $ pr ['message' -optional] [to branch -optional] [from branch -optional]
+pr() {
+  if [ $1 ]; then
+    MESSAGE=$1
+  else
+    MESSAGE=$(git log -1 --pretty=%s)
+  fi
+  echo $MESSAGE
+  if [ $2 ]; then
+    TO_BRANCH=$2
+  else
+    TO_BRANCH=dev;
+  fi
+  if [ $3 ]; then
+    FROM_BRANCH=$3;
+  else
+    FROM_BRANCH=$(git rev-parse --abbrev-ref HEAD);
+  fi
+  hub pull-request -m $MESSAGE -b $TO_BRANCH -h $FROM_BRANCH | pbcopy
+}
+
 # git log verbose
 alias glg='git log --graph --decorate --all --pretty="%C(yellow)%h%C(auto)%d %C(blue)%s %Cgreen%cr %Creset%cn"'
 alias glv='git log --decorate --all --pretty="%C(yellow)%h %>(14)%Cgreen%cr%C(auto)%d %C(blue)%s %Creset%cn"'
