@@ -27,7 +27,9 @@ export PATH=$PATH:$HOME/npm/bin
 export PATH=$PATH:/usr/local/heroku/bin
 export PATH=$PATH:/usr/local/go/bin
 
-export GOPATH=$HOME/Workspace/Dev/go
+# Go
+export GOBIN=$HOME/go/bin
+export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
 # -----------------------------------------------------------------------------
@@ -115,6 +117,9 @@ alias o="subl ."
 # DB aliases
 alias db-mongo="mongod --config /usr/local/etc/mongod.conf"
 alias db-redis="redis-server /usr/local/etc/redis.conf"
+
+# Deploy script alias
+alias deploy="./deploy.sh"
 
 # Serve some static stuff from CWD fast with optional port argument
 serve() {
