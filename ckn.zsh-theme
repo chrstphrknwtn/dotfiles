@@ -2,7 +2,7 @@
 
 export LSCOLORS="exfxcxdxbxegedabagacad"
 
-PROMPT='%{$fg[white]%}%c%{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%}%{$reset_color%}: '
+PROMPT='%{$fg[white]%}%~%{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%}%{$reset_color%}: '
 
 # Time on the right
 # RPROMPT='%T'
