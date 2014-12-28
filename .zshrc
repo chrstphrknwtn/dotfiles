@@ -8,7 +8,7 @@ ZSH_THEME="ckn"
 plugins=(z zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
-source ~/Dropbox/Apps/Terminal/k/k.sh
+# source ~/Dropbox/Apps/Terminal/k/k.sh
 
 # Reload this file
 alias reload="source ~/.zshrc"
@@ -110,6 +110,9 @@ alias gl='git --no-pager log --decorate --all --pretty="%C(yellow)%h %>(14)%Cgre
 # -----------------------------------------------------------------------------
 # Random
 # -----------------------------------------------------------------------------
+
+# Use bash 4 installed by homebrew
+alias bash='/usr/local/Cellar/bash/4.3.30/bin/bash'
 
 # Open CWD in sublime
 alias o="subl ."
