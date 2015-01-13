@@ -8,7 +8,7 @@ ZSH_THEME="ckn"
 plugins=(z zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
-# source ~/Dropbox/Apps/Terminal/k/k.sh
+source ~/Dropbox/Apps/Terminal/k/k.sh
 
 # Reload this file
 alias reload="source ~/.zshrc"
@@ -79,6 +79,12 @@ gv() {
  echo "\033[0;34madd, remove, update, refactor, fix\033[0m";
 }
 
+# Git dribble
+# stash pull pop
+gd() {
+  git stash && git pull && git stash pop;
+}
+
 # Pull request
 # Usage: $ pr ['message' -optional] [to branch -optional] [from branch -optional]
 pr() {
@@ -108,7 +114,7 @@ alias gl='git --no-pager log --decorate --all --pretty="%C(yellow)%h %>(14)%Cgre
 
 
 # -----------------------------------------------------------------------------
-# Random
+# Aliases
 # -----------------------------------------------------------------------------
 
 # Use bash 4 installed by homebrew
@@ -123,6 +129,13 @@ alias db-redis="redis-server /usr/local/etc/redis.conf"
 
 # Deploy script alias
 alias deploy="./deploy.sh"
+
+# Node Webkit on CWD
+alias nw="/Applications/node-webkit.app/Contents/MacOS/node-webkit ."
+
+# -----------------------------------------------------------------------------
+# Ad-hoc web servers
+# -----------------------------------------------------------------------------
 
 # Serve some static stuff from CWD fast with optional port argument
 serve() {
@@ -142,45 +155,6 @@ serve-php() {
   else
     php -S localhost:8000
   fi
-}
-
-# Quickly make a directory with yeoman generated app to play with
-play() {
-  if [ $1 ]
-    then
-    if [ $2 ]
-      then
-      NAME=$1-$2
-    else
-      NAME=$1-$[($RANDOM % 13843) + 1]
-    fi
-    cd ~/Workspace/dev && mkdir $NAME && cd $_
-    yo $1
-    subl .
-  else
-    cd ~/Workspace/dev && mkdir yeah-$[($RANDOM % 13843) + 1] && cd $_
-  fi
-}
-
-colortest() {
-  echo -en "\n   +  "
-  for i in {0..35}; do
-    printf "%2b " $i
-  done
-  printf "\n\n %3b  " 0
-  for i in {0..15}; do
-    echo -en "\033[48;5;${i}m  \033[m "
-  done
-  #for i in 16 52 88 124 160 196 232; do
-  for i in {0..6}; do
-    let "i = i*36 +16"
-    printf "\n\n %3b  " $i
-    for j in {0..35}; do
-      let "val = i+j"
-      echo -en "\033[48;5;${val}m  \033[m "
-    done
-  done
-  echo -e "\n"
 }
 
 # Update everything
