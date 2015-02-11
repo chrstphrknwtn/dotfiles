@@ -2,12 +2,25 @@
 # zsh setup
 # -----------------------------------------------------------------------------
 
-ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="ckn"
+source ~/Dropbox/Apps/Terminal/dotfiles/antigen.zsh
 
-plugins=(z zsh-syntax-highlighting)
+antigen use oh-my-zsh
 
-source $ZSH/oh-my-zsh.sh
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle z
+
+antigen bundle chrstphrknwtn/pure
+
+antigen apply
+
+# ZSH=$HOME/.oh-my-zsh
+# ZSH_THEME="ckn"
+
+# plugins=(z zsh-syntax-highlighting)
+
+
+
+# source $ZSH/oh-my-zsh.sh
 source ~/Dropbox/Apps/Terminal/k/k.sh
 
 # Reload this file
@@ -48,7 +61,7 @@ g() {
   fi
 }
 # Complete g like git
-compdef g=git
+# compdef g=git
 
 # git sync
 gs() {
@@ -107,6 +120,22 @@ pr() {
   hub pull-request -m $MESSAGE -b $TO_BRANCH -h $FROM_BRANCH | pbcopy
 }
 
+# Toggle ssh identities
+# Set default to pic
+export SSHIDENT=pix
+ssh-toggle() {
+  if [ $SSHIDENT = "pix" ]
+  then
+    export SSHIDENT=me
+    echo 'Host github.com\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/id_rsa\n' > ~/.ssh/config
+  else
+    export SSHIDENT=pix
+    echo 'Host github.com\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/id_pix\n' > ~/.ssh/config
+  fi
+  echo "[\033[38;5;242;mSSH ID\033[0m] $SSHIDENT"
+}
+alias st='ssh-toggle'
+
 # git log verbose
 alias glg='git log --graph --decorate --all --pretty="%C(yellow)%h%C(auto)%d %C(blue)%s %Cgreen%cr %Creset%cn"'
 alias glv='git log --decorate --all --pretty="%C(yellow)%h %>(14)%Cgreen%cr%C(auto)%d %C(blue)%s %Creset%cn"'
@@ -116,6 +145,10 @@ alias gl='git --no-pager log --decorate --all --pretty="%C(yellow)%h %>(14)%Cgre
 # -----------------------------------------------------------------------------
 # Aliases
 # -----------------------------------------------------------------------------
+
+# k
+alias k="k -a"
+alias l="k --no-vcs"
 
 # Use bash 4 installed by homebrew
 alias bash='/usr/local/Cellar/bash/4.3.30/bin/bash'
@@ -156,6 +189,3 @@ serve-php() {
     php -S localhost:8000
   fi
 }
-
-# Update everything
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g;'
