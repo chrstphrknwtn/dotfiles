@@ -8,17 +8,9 @@ antigen use oh-my-zsh
 
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle z
-
 antigen bundle chrstphrknwtn/pure
 
 antigen apply
-
-# ZSH=$HOME/.oh-my-zsh
-# ZSH_THEME="ckn"
-
-# plugins=(z zsh-syntax-highlighting)
-
-
 
 # source $ZSH/oh-my-zsh.sh
 source ~/Dropbox/Apps/Terminal/k/k.sh
@@ -128,11 +120,12 @@ ssh-toggle() {
   then
     export SSHIDENT=me
     echo 'Host github.com\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/id_rsa\n' > ~/.ssh/config
+    echo "\033[38;5;242;mUsing ssh key\033[0m ~/.ssh/id_rsa"
   else
     export SSHIDENT=pix
     echo 'Host github.com\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/id_pix\n' > ~/.ssh/config
+    echo "\033[38;5;242;mUsing ssh key\033[0m ~/.ssh/id_pix"
   fi
-  echo "[\033[38;5;242;mSSH ID\033[0m] $SSHIDENT"
 }
 alias st='ssh-toggle'
 
