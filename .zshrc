@@ -84,10 +84,13 @@ gv() {
  echo "\033[0;34madd, remove, update, refactor, fix\033[0m";
 }
 
-# Git dribble
-# stash pull pop
+# Git diff
 gd() {
-  git stash && git pull && git stash pop;
+  if [ $1 ]; then
+    git diff $1
+  else
+    git diff
+  fi
 }
 
 # Pull request
