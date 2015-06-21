@@ -9,11 +9,9 @@ antigen use oh-my-zsh
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle z
 antigen bundle chrstphrknwtn/pure
+antigen bundle rimraf/k
 
 antigen apply
-
-# source $ZSH/oh-my-zsh.sh
-source ~/Dropbox/Apps/Terminal/k/k.sh
 
 # Reload this file
 alias reload="source ~/.zshrc"
