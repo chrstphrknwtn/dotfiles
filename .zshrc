@@ -9,11 +9,9 @@ antigen use oh-my-zsh
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle z
 antigen bundle chrstphrknwtn/pure
+antigen bundle rimraf/k
 
 antigen apply
-
-# source $ZSH/oh-my-zsh.sh
-source ~/Dropbox/Apps/Terminal/k/k.sh
 
 # Reload this file
 alias reload="source ~/.zshrc"
@@ -116,7 +114,7 @@ pr() {
 }
 
 # Toggle ssh identities
-# Set default to pic
+# Set default to pix
 export SSHIDENT=pix
 ssh-toggle() {
   if [ $SSHIDENT = "pix" ]
@@ -143,7 +141,7 @@ alias gl='git --no-pager log --decorate --all --pretty="%C(yellow)%h %>(14)%Cgre
 # -----------------------------------------------------------------------------
 
 # k
-alias k="k -a"
+alias k="k -A"
 alias l="k --no-vcs"
 
 # Use bash 4 installed by homebrew
@@ -187,7 +185,7 @@ serve-php() {
 }
 
 # -----------------------------------------------------------------------------
-# Proto
+# Fast Prototype Maker
 # -----------------------------------------------------------------------------
 
 export PROTOTYPE_FOLDER=~/Workspace/Dev/prototypes
@@ -205,6 +203,6 @@ p () {
     cd $NAME
     npm install && bower install && echo '\n  \033[0;32mPrototype ready!\n\n  run using\033[0m npm start\n  \033[0;32mchange the remote using \033[0mgit remote set-url origin git@github.com:user/other-repo.git'
   else
-    echo '\n\033[0;32mYou must set environment varible for where your prototypes will go, put \033[0mexport PROTOTYPE_FOLDER=~/dev/prototypes\033[0;32m in your .zshrc. Make sure the folder exists!\033[0m'
+    echo '\n\033[0;32mYou must set environment varible for where your prototypes will go, put \033[0mexport PROTOTYPE_FOLDER=~/dev/prototypes \033[0;32m in your .zshrc. Make sure the folder exists!\033[0m'
   fi
 }
