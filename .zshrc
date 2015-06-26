@@ -29,6 +29,7 @@ export PATH=$PATH:/usr/sbin
 export PATH=$PATH:$HOME/npm/bin
 export PATH=$PATH:/usr/local/heroku/bin
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/Dropbox/Apps/Terminal/shell-scripts
 
 # Go
 export GOBIN=$HOME/go/bin
