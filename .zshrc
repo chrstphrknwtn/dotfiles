@@ -122,12 +122,13 @@ ssh-toggle() {
   then
     export SSHIDENT=me
     echo 'Host github.com\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/id_rsa\n' > ~/.ssh/config
-    echo "\033[38;5;242;mUsing ssh key\033[0m ~/.ssh/id_rsa"
+    echo "\033[38;5;242;mSSH key\033[0m    ~/.ssh/id_rsa"
   else
     export SSHIDENT=pix
     echo 'Host github.com\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/id_pix\n' > ~/.ssh/config
-    echo "\033[38;5;242;mUsing ssh key\033[0m ~/.ssh/id_pix"
+    echo "\033[38;5;242;mSSH key\033[0m    ~/.ssh/id_pix"
   fi
+  echo "\033[38;5;242;mGit whoami\033[0m $(command git-whoami)"
 }
 alias st='ssh-toggle'
 
