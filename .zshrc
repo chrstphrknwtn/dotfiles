@@ -162,6 +162,18 @@ alias deploy="./deploy.sh"
 # Node Webkit on CWD
 alias nw="/Applications/node-webkit.app/Contents/MacOS/node-webkit ."
 
+# Divshot
+alias ds="divshot"
+
+# -----------------------------------------------------------------------------
+# Utilities
+# -----------------------------------------------------------------------------
+
+killport() {
+  PORT=$1
+  lsof -P | grep ':$PORT' | awk '{print $2}' | xargs kill -9
+}
+
 # -----------------------------------------------------------------------------
 # Ad-hoc web servers
 # -----------------------------------------------------------------------------
@@ -208,3 +220,8 @@ p () {
     echo '\n\033[0;32mYou must set environment varible for where your prototypes will go, put \033[0mexport PROTOTYPE_FOLDER=~/dev/prototypes \033[0;32m in your .zshrc. Make sure the folder exists!\033[0m'
   fi
 }
+
+# ------------------------------------------------------------------------------
+# https://github.com/direnv/direnv
+# ------------------------------------------------------------------------------
+eval "$(direnv hook zsh)"
