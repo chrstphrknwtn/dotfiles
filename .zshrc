@@ -165,6 +165,11 @@ alias nw="/Applications/node-webkit.app/Contents/MacOS/node-webkit ."
 # Divshot
 alias ds="divshot"
 
+# Gulp Projects
+alias run='./node_modules/gulp/bin/gulp.js'
+alias build='./node_modules/gulp/bin/gulp.js build'
+alias deploy='./node_modules/gulp/bin/gulp.js deploy'
+
 # -----------------------------------------------------------------------------
 # Utilities
 # -----------------------------------------------------------------------------
@@ -220,8 +225,3 @@ p () {
     echo '\n\033[0;32mYou must set environment varible for where your prototypes will go, put \033[0mexport PROTOTYPE_FOLDER=~/dev/prototypes \033[0;32m in your .zshrc. Make sure the folder exists!\033[0m'
   fi
 }
-
-# ------------------------------------------------------------------------------
-# https://github.com/direnv/direnv
-# ------------------------------------------------------------------------------
-eval "$(direnv hook zsh)"
