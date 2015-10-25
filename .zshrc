@@ -28,13 +28,7 @@ export PATH=$PATH:/sbin
 export PATH=$PATH:/usr/sbin
 export PATH=$PATH:$HOME/npm/bin
 export PATH=$PATH:/usr/local/heroku/bin
-export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/Dropbox/Apps/Terminal/shell-scripts
-
-# Go
-export GOBIN=$HOME/go/bin
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
 
 # -----------------------------------------------------------------------------
 # Git
@@ -51,39 +45,8 @@ g() {
     git status -s
   fi
 }
-# Complete g like git
-# compdef g=git
 
-# git sync
-gs() {
-  CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD);
-
-  if [ ! $1 ]
-    then
-    echo "\n\033[0;31mYou must enter a commit message.\033[0m"
-    return 1
-  fi
-
-  echo "\n\033[0;34mgit add -A\033[0m"
-  git add -A || { return 1; }
-
-  echo "\n\033[0;34mgit commit -m \033[0m\033[0;33m$1\033[0m"
-  git commit -m $1 || { return 1; }
-
-  echo "\n\033[0;34mgit pull origin $CURRENT_BRANCH\033[0m"
-  git pull origin $CURRENT_BRANCH || { return 1; }
-
-  echo "\n\033[0;34mgit push origin $CURRENT_BRANCH\033[0m"
-  git push origin $CURRENT_BRANCH || { return 1; }
-}
-
-# git verbs
-# remind me of useful verbs to prefix gits commits
-gv() {
- echo "\033[0;34madd, remove, update, refactor, fix\033[0m";
-}
-
-# Git diff
+# Git Diff
 gd() {
   if [ $1 ]; then
     git diff $1
@@ -92,35 +55,19 @@ gd() {
   fi
 }
 
-# Pull request
-# Usage: $ pr ['message' -optional] [to branch -optional] [from branch -optional]
-pr() {
-  if [ $1 ]; then
-    MESSAGE=$1
-  else
-    MESSAGE=$(git log -1 --pretty=%s)
-  fi
-  echo $MESSAGE
-  if [ $2 ]; then
-    TO_BRANCH=$2
-  else
-    TO_BRANCH=dev;
-  fi
-  if [ $3 ]; then
-    FROM_BRANCH=$3;
-  else
-    FROM_BRANCH=$(git rev-parse --abbrev-ref HEAD);
-  fi
-  hub pull-request -m $MESSAGE -b $TO_BRANCH -h $FROM_BRANCH | pbcopy
-}
+# Git Logs
+alias glg='git log --graph --decorate --all --pretty="%C(yellow)%h%C(auto)%d %C(blue)%s %Cgreen%cr %Creset%cn"'
+alias glv='git log --decorate --all --pretty="%C(yellow)%h %>(14)%Cgreen%cr%C(auto)%d %C(blue)%s %Creset%cn"'
+alias gl='git --no-pager log --decorate --all --pretty="%C(yellow)%h %>(14)%Cgreen%cr%C(auto)%d %C(blue)%s %Creset%cn" -20'
+
 
 # Toggle ssh identities
 # Set default to pix
-export SSHIDENT=pix
+export SSHIDENT=ckn
 ssh-toggle() {
   if [ $SSHIDENT = "pix" ]
   then
-    export SSHIDENT=me
+    export SSHIDENT=ckn
     echo 'Host github.com\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/id_rsa\n' > ~/.ssh/config
     echo "\033[38;5;242;mSSH key\033[0m    ~/.ssh/id_rsa"
   else
@@ -131,11 +78,6 @@ ssh-toggle() {
   echo "\033[38;5;242;mGit whoami\033[0m $(command git-whoami)"
 }
 alias st='ssh-toggle'
-
-# git log verbose
-alias glg='git log --graph --decorate --all --pretty="%C(yellow)%h%C(auto)%d %C(blue)%s %Cgreen%cr %Creset%cn"'
-alias glv='git log --decorate --all --pretty="%C(yellow)%h %>(14)%Cgreen%cr%C(auto)%d %C(blue)%s %Creset%cn"'
-alias gl='git --no-pager log --decorate --all --pretty="%C(yellow)%h %>(14)%Cgreen%cr%C(auto)%d %C(blue)%s %Creset%cn" -20'
 
 
 # -----------------------------------------------------------------------------
@@ -156,28 +98,11 @@ alias o="subl . > /dev/null"
 alias db-mongo="mongod --config /usr/local/etc/mongod.conf"
 alias db-redis="redis-server /usr/local/etc/redis.conf"
 
-# Deploy script alias
-alias deploy="./deploy.sh"
+# Project Scripts / Task Runners
+alias run="./run"
+alias build="./build"
+alias deploy="./deploy"
 
-# Node Webkit on CWD
-alias nw="/Applications/node-webkit.app/Contents/MacOS/node-webkit ."
-
-# Divshot
-alias ds="divshot"
-
-# Gulp Projects
-alias run='./node_modules/gulp/bin/gulp.js'
-alias build='./node_modules/gulp/bin/gulp.js build'
-alias deploy='./node_modules/gulp/bin/gulp.js deploy'
-
-# -----------------------------------------------------------------------------
-# Utilities
-# -----------------------------------------------------------------------------
-
-killport() {
-  PORT=$1
-  lsof -P | grep ':$PORT' | awk '{print $2}' | xargs kill -9
-}
 
 # -----------------------------------------------------------------------------
 # Ad-hoc web servers
@@ -200,28 +125,5 @@ serve-php() {
     php -S localhost:$1
   else
     php -S localhost:8000
-  fi
-}
-
-# -----------------------------------------------------------------------------
-# Fast Prototype Maker
-# -----------------------------------------------------------------------------
-
-export PROTOTYPE_FOLDER=~/Workspace/Dev/prototypes
-
-p () {
-  if [ $PROTOTYPE_FOLDER ]; then
-    if [ $1 ]; then
-      NAME=$1
-    else
-      NAME=proto-$[($RANDOM % 13843) + 1]
-    fi
-    cd $PROTOTYPE_FOLDER
-    mkdir $NAME
-    git clone git@github.com:supercrabtree/prototype $NAME
-    cd $NAME
-    npm install && bower install && echo '\n  \033[0;32mPrototype ready!\n\n  run using\033[0m npm start\n  \033[0;32mchange the remote using \033[0mgit remote set-url origin git@github.com:user/other-repo.git'
-  else
-    echo '\n\033[0;32mYou must set environment varible for where your prototypes will go, put \033[0mexport PROTOTYPE_FOLDER=~/dev/prototypes \033[0;32m in your .zshrc. Make sure the folder exists!\033[0m'
   fi
 }
