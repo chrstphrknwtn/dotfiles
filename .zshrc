@@ -4,10 +4,10 @@
 
 source ~/Dropbox/Apps/Terminal/dotfiles/antigen.zsh
 
-antigen use oh-my-zsh
+# antigen use oh-my-zsh
 
 antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle z
+antigen bundle rupa/z
 antigen bundle chrstphrknwtn/pure
 antigen bundle rimraf/k
 
@@ -61,25 +61,6 @@ alias glv='git log --decorate --all --pretty="%C(yellow)%h %>(14)%Cgreen%cr%C(au
 alias gl='git --no-pager log --decorate --all --pretty="%C(yellow)%h %>(14)%Cgreen%cr%C(auto)%d %C(blue)%s %Creset%cn" -20'
 
 
-# Toggle ssh identities
-# Set default to pix
-export SSHIDENT=ckn
-ssh-toggle() {
-  if [ $SSHIDENT = "pix" ]
-  then
-    export SSHIDENT=ckn
-    echo 'Host github.com\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/id_rsa\n' > ~/.ssh/config
-    echo "\033[38;5;242;mSSH key\033[0m    ~/.ssh/id_rsa"
-  else
-    export SSHIDENT=pix
-    echo 'Host github.com\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/id_pix\n' > ~/.ssh/config
-    echo "\033[38;5;242;mSSH key\033[0m    ~/.ssh/id_pix"
-  fi
-  echo "\033[38;5;242;mGit whoami\033[0m $(command git-whoami)"
-}
-alias st='ssh-toggle'
-
-
 # -----------------------------------------------------------------------------
 # Aliases
 # -----------------------------------------------------------------------------
@@ -99,6 +80,7 @@ alias db-mongo="mongod --config /usr/local/etc/mongod.conf"
 alias db-redis="redis-server /usr/local/etc/redis.conf"
 
 # Project Scripts / Task Runners
+alias setup="./setup"
 alias run="./run"
 alias build="./build"
 alias deploy="./deploy"
