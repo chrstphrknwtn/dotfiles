@@ -84,6 +84,14 @@ alias setup="./setup"
 alias run="./run"
 alias build="./build"
 alias deploy="./deploy"
+# Even shorter
+alias s="./setup"
+alias r="./run"
+alias b="./build"
+alias d="./deploy"
+
+# Flush DNS
+alias flushdns="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder"
 
 
 # -----------------------------------------------------------------------------
