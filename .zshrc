@@ -16,6 +16,13 @@ antigen apply
 # Reload this file
 alias reload="source ~/.zshrc"
 
+# History
+setopt extended_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt share_history
+
 # -----------------------------------------------------------------------------
 # Path
 # -----------------------------------------------------------------------------
@@ -59,6 +66,8 @@ gd() {
 alias glg='git log --graph --decorate --all --pretty="%C(yellow)%h%C(auto)%d %C(blue)%s %Cgreen%cr %Creset%cn"'
 alias glv='git log --decorate --all --pretty="%C(yellow)%h %>(14)%Cgreen%cr%C(auto)%d %C(blue)%s %Creset%cn"'
 alias gl='git --no-pager log --decorate --all --pretty="%C(yellow)%h %>(14)%Cgreen%cr%C(auto)%d %C(blue)%s %Creset%cn" -20'
+alias gc='git-cal'
+
 
 
 # -----------------------------------------------------------------------------
@@ -93,6 +102,10 @@ alias d="./deploy"
 # Flush DNS
 alias flushdns="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder"
 
+# Hidden Files
+alias show='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias hide='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+
 
 # -----------------------------------------------------------------------------
 # Ad-hoc web servers
@@ -117,3 +130,10 @@ serve-php() {
     php -S localhost:8000
   fi
 }
+
+
+# -----------------------------------------------------------------------------
+# Nasty rbenv stuff
+# -----------------------------------------------------------------------------
+
+eval "$(rbenv init -)"
