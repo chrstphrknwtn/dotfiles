@@ -22,6 +22,13 @@ setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_ignore_space
 setopt share_history
+setopt ignoreeof
+
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=200000
+SAVEHIST=100000
+
+
 
 # -----------------------------------------------------------------------------
 # Path
@@ -38,10 +45,24 @@ export PATH=$PATH:/usr/local/heroku/bin
 export PATH=$PATH:$HOME/Dropbox/Apps/Terminal/shell-scripts
 
 # -----------------------------------------------------------------------------
+# Exports
+# -----------------------------------------------------------------------------
+
+export EDITOR=subl
+
+# -----------------------------------------------------------------------------
+# z style
+# -----------------------------------------------------------------------------
+
+zstyle ':completion:*:*:*:*:*' menu select
+
+# -----------------------------------------------------------------------------
 # Git
 # -----------------------------------------------------------------------------
 
 export GIT_MERGE_AUTOEDIT=no
+
+git_log_defaults="%C(yellow)%h %>(14)%Cgreen%cr %C(blue)%<(55,trunc)%s %Creset%<(20,trunc)%cn%C(auto)%d"
 
 # No arguments: `git status`
 # With arguments: acts like `git`
@@ -62,12 +83,29 @@ gd() {
   fi
 }
 
-# Git Logs
-alias glg='git log --graph --decorate --all --pretty="%C(yellow)%h%C(auto)%d %C(blue)%s %Cgreen%cr %Creset%cn"'
-alias glv='git log --decorate --all --pretty="%C(yellow)%h %>(14)%Cgreen%cr%C(auto)%d %C(blue)%s %Creset%cn"'
-alias gl='git --no-pager log --decorate --all --pretty="%C(yellow)%h %>(14)%Cgreen%cr%C(auto)%d %C(blue)%s %Creset%cn" -20'
-alias gc='git-cal'
+# Git logs
+gl() {
+  LINES=20
+  if [ $1 ]; then
+    LINES=$1
+  fi
+  git log --decorate --all --pretty="$git_log_defaults" "-$LINES"
+}
 
+glb() {
+  LINES=20
+  if [ $1 ]; then
+    LINES=$1
+  fi
+  git log --decorate --pretty="$git_log_defaults" "-$LINES"
+}
+
+# Git Logs
+alias glg='git log --graph --decorate --all --pretty="$git_log_defaults"'
+alias glv='git log --decorate --all --pretty="$git_log_defaults"'
+
+# Git calender
+alias gc='git-cal'
 
 
 # -----------------------------------------------------------------------------
@@ -133,7 +171,6 @@ serve-php() {
 
 
 # -----------------------------------------------------------------------------
-# Nasty rbenv stuff
+# rbenv crap
 # -----------------------------------------------------------------------------
-
-eval "$(rbenv init -)"
+if hostname | grep Iris >/dev/null; then eval "$(rbenv init -)"; fi
