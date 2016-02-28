@@ -9,7 +9,7 @@ source ~/Dropbox/Apps/Terminal/dotfiles/antigen.zsh
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle rupa/z
 antigen bundle chrstphrknwtn/pure
-antigen bundle rimraf/k
+antigen bundle supercrabtree/k
 
 antigen apply
 
@@ -143,6 +143,9 @@ alias flushdns="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder"
 # Hidden Files
 alias show='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hide='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+
+# suffix
+alias -s git='git clone'
 
 
 # -----------------------------------------------------------------------------
