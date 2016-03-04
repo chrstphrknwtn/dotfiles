@@ -16,6 +16,10 @@ antigen apply
 # Reload this file
 alias reload="source ~/.zshrc"
 
+# -----------------------------------------------------------------------------
+# Options
+# -----------------------------------------------------------------------------
+
 # History
 setopt extended_history
 setopt hist_expire_dups_first
@@ -28,7 +32,37 @@ HISTFILE=$HOME/.zsh_history
 HISTSIZE=200000
 SAVEHIST=100000
 
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
 
+# -----------------------------------------------------------------------------
+# Keyboard Shortcuts
+# -----------------------------------------------------------------------------
+
+zle -N up-line-or-beginning-search
+zle -N searchup
+bindkey "^[[A" searchup
+
+zle -N down-line-or-beginning-search
+zle -N searchdown
+bindkey "^[[B" searchdown
+
+zle -N fancy-branch
+bindkey '^b' fancy-branch
+
+
+# ------------------------------------------------------------------------------
+# ZLE Functions
+# ------------------------------------------------------------------------------
+
+searchup() {
+  zle up-line-or-beginning-search
+  _zsh_highlight
+}
+searchdown() {
+  zle down-line-or-beginning-search
+  _zsh_highlight
+}
 
 # -----------------------------------------------------------------------------
 # Path
@@ -98,6 +132,37 @@ glb() {
     LINES=$1
   fi
   git log --decorate --pretty="$git_log_defaults" "-$LINES"
+}
+
+fancy-branch() {
+  local tags localbranches remotebranches target
+  tags=$(
+  git tag | awk '{print "\x1b[33;1mtag\x1b[m\t" $1}') || return
+  localbranches=$(
+  git for-each-ref --sort=-committerdate refs/heads/ |
+  sed 's|.*refs/heads/||' |
+  awk '{print "\x1b[34;1mbranch\x1b[m\t" $1}') || return
+  remotebranches=$(
+  git branch --remote | grep -v HEAD             |
+  sed "s/.* //"       | sed "s#remotes/[^/]*/##" |
+  sort -u             | awk '{print "\x1b[31;1mremote\x1b[m\t" $1}') || return
+  target=$(
+  (echo "$localbranches"; echo "$tags"; echo "$remotebranches";) |
+  fzf --no-hscroll --ansi +m -d "\t" -n 2) || return
+  if [[ -z "$BUFFER" ]]; then
+    if [[ $(echo "$target" | awk '{print $1}') == 'remote' ]]; then
+      target=$(echo "$target" | awk '{print $2}' | sed 's|.*/||')
+      git checkout "$target"
+      zle accept-line
+    else
+      git checkout $(echo "$target" | awk '{print $2}')
+      zle accept-line
+    fi
+  else
+    res=$(echo "$target" | awk '{print $2}')
+    LBUFFER="$(echo "$LBUFFER" | xargs) ${res}"
+    zle redisplay
+  fi
 }
 
 # Git Logs
