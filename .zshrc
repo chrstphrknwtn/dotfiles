@@ -20,6 +20,9 @@ alias reload="source ~/.zshrc"
 # Options
 # -----------------------------------------------------------------------------
 
+# Syntax Highlighters
+# ZSH_HIGHLIGHT_STYLES[command]=fg=green
+
 # History
 setopt extended_history
 setopt hist_expire_dups_first
@@ -34,6 +37,8 @@ SAVEHIST=100000
 
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
+
+_Z_DATA=~/.z.data/.z
 
 # -----------------------------------------------------------------------------
 # Keyboard Shortcuts
@@ -134,6 +139,22 @@ glb() {
   git log --decorate --pretty="$git_log_defaults" "-$LINES"
 }
 
+gh() {
+  giturl=$(git config --get remote.origin.url)
+  if [ $giturl ]; then
+    giturl=${giturl/git\@github\.com\:/https://github.com/}
+    giturl=${giturl/\.git/\/tree/}
+    branch="$(git symbolic-ref HEAD 2>/dev/null)" ||
+    branch="(unnamed branch)"     # detached HEAD
+    branch=${branch##refs/heads/}
+    giturl=$giturl$branch
+    echo $giturl
+    open $giturl
+  else
+    echo "Not a git repository or no remote set."
+  fi
+}
+
 fancy-branch() {
   local tags localbranches remotebranches target
   tags=$(
@@ -182,7 +203,7 @@ alias k="k -A"
 alias l="k --no-vcs"
 
 # Use bash 4 installed by homebrew
-alias bash='/usr/local/Cellar/bash/4.3.30/bin/bash'
+alias bash='/usr/local/bin/bash'
 
 # Open CWD in sublime
 alias o="subl . > /dev/null"
