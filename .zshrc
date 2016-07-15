@@ -233,6 +233,9 @@ alias hide='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder
 # suffix
 alias -s git='git clone'
 
+# update
+alias update='brew update && brew upgrade && n latest && npm update -g'
+
 
 # -----------------------------------------------------------------------------
 # Ad-hoc web servers
