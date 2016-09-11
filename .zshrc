@@ -2,14 +2,14 @@
 # zsh setup
 # -----------------------------------------------------------------------------
 
-source ~/Dropbox/Apps/Terminal/dotfiles/antigen.zsh
+source ~/.dotfiles/antigen.zsh
 
 # antigen use oh-my-zsh
 
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle rupa/z
 antigen bundle chrstphrknwtn/pure
-antigen bundle supercrabtree/k
+# antigen bundle supercrabtree/k
 
 antigen apply
 
@@ -81,7 +81,7 @@ export PATH=$PATH:/sbin
 export PATH=$PATH:/usr/sbin
 export PATH=$PATH:$HOME/npm/bin
 export PATH=$PATH:/usr/local/heroku/bin
-export PATH=$PATH:$HOME/Dropbox/Apps/Terminal/shell-scripts
+export PATH=$PATH:$HOME/.bin
 
 # -----------------------------------------------------------------------------
 # Exports
@@ -199,8 +199,11 @@ alias gc='git-cal'
 # -----------------------------------------------------------------------------
 
 # k
-alias k="k -A"
-alias l="k --no-vcs"
+# alias k="k -A"
+# alias l="k --no-vcs"
+
+# ls
+alias l="ls -lhaG"
 
 # Use bash 4 installed by homebrew
 alias bash='/usr/local/bin/bash'
