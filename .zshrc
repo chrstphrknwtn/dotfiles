@@ -3,25 +3,15 @@
 # -----------------------------------------------------------------------------
 
 source ~/.dotfiles/antigen.zsh
-
-# antigen use oh-my-zsh
-
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle rupa/z
 antigen bundle chrstphrknwtn/pure
-# antigen bundle supercrabtree/k
-
 antigen apply
 
-# Reload this file
-alias reload="source ~/.zshrc"
 
 # -----------------------------------------------------------------------------
 # Options
 # -----------------------------------------------------------------------------
-
-# Syntax Highlighters
-# ZSH_HIGHLIGHT_STYLES[command]=fg=green
 
 # History
 setopt extended_history
@@ -39,6 +29,7 @@ autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
 
 _Z_DATA=~/.z.data/.z
+
 
 # -----------------------------------------------------------------------------
 # Keyboard Shortcuts
@@ -69,6 +60,7 @@ searchdown() {
   _zsh_highlight
 }
 
+
 # -----------------------------------------------------------------------------
 # Path
 # -----------------------------------------------------------------------------
@@ -83,17 +75,20 @@ export PATH=$PATH:$HOME/npm/bin
 export PATH=$PATH:/usr/local/heroku/bin
 export PATH=$PATH:$HOME/.bin
 
+
 # -----------------------------------------------------------------------------
 # Exports
 # -----------------------------------------------------------------------------
 
 export EDITOR=subl
 
+
 # -----------------------------------------------------------------------------
 # z style
 # -----------------------------------------------------------------------------
 
 zstyle ':completion:*:*:*:*:*' menu select
+
 
 # -----------------------------------------------------------------------------
 # Git
@@ -122,7 +117,7 @@ gd() {
   fi
 }
 
-# Git logs
+# Last 20 commits
 gl() {
   LINES=20
   if [ $1 ]; then
@@ -131,6 +126,7 @@ gl() {
   git log --decorate --all --pretty="$git_log_defaults" "-$LINES"
 }
 
+# last 20 commits in current branch
 glb() {
   LINES=20
   if [ $1 ]; then
@@ -139,6 +135,11 @@ glb() {
   git log --decorate --pretty="$git_log_defaults" "-$LINES"
 }
 
+# All the logs
+alias glg='git log --graph --decorate --all --pretty="$git_log_defaults"'
+alias glv='git log --decorate --all --pretty="$git_log_defaults"'
+
+# Open current repo in browsers
 gh() {
   giturl=$(git config --get remote.origin.url)
   if [ $giturl ]; then
@@ -155,6 +156,7 @@ gh() {
   fi
 }
 
+# ctrl-b to switch branch
 fancy-branch() {
   local tags localbranches remotebranches target
   tags=$(
@@ -186,45 +188,16 @@ fancy-branch() {
   fi
 }
 
-# Git Logs
-alias glg='git log --graph --decorate --all --pretty="$git_log_defaults"'
-alias glv='git log --decorate --all --pretty="$git_log_defaults"'
-
-# Git calender
-alias gc='git-cal'
-
 
 # -----------------------------------------------------------------------------
 # Aliases
 # -----------------------------------------------------------------------------
 
-# k
-# alias k="k -A"
-# alias l="k --no-vcs"
-
 # ls
 alias l="ls -lhaG"
 
-# Use bash 4 installed by homebrew
-alias bash='/usr/local/bin/bash'
-
 # Open CWD in sublime
 alias o="subl . > /dev/null"
-
-# DB aliases
-alias db-mongo="mongod --config /usr/local/etc/mongod.conf"
-alias db-redis="redis-server /usr/local/etc/redis.conf"
-
-# Project Scripts / Task Runners
-alias setup="./setup"
-alias run="./run"
-alias build="./build"
-alias deploy="./deploy"
-# Even shorter
-alias s="./setup"
-alias r="./run"
-alias b="./build"
-alias d="./deploy"
 
 # Flush DNS
 alias flushdns="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder"
@@ -241,31 +214,21 @@ alias update='brew update && brew upgrade && n latest && npm update -g'
 
 
 # -----------------------------------------------------------------------------
-# Ad-hoc web servers
-# -----------------------------------------------------------------------------
-
-# Serve some static stuff from CWD fast with optional port argument
-serve() {
-  if [ "$1" != "" ]
-  then
-    python -m SimpleHTTPServer $1
-  else
-    python -m SimpleHTTPServer
-  fi
-}
-
-# Serve php from CWD with optional port argument
-serve-php() {
-  if [ "$1" != "" ]
-  then
-    php -S localhost:$1
-  else
-    php -S localhost:8000
-  fi
-}
-
-
-# -----------------------------------------------------------------------------
 # rbenv crap
 # -----------------------------------------------------------------------------
 if hostname | grep Iris >/dev/null; then eval "$(rbenv init -)"; fi
+
+
+# -----------------------------------------------------------------------------
+# Google Cloud SDK
+# -----------------------------------------------------------------------------
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f /Users/ckn/Workspace/dev/google-cloud-sdk/path.zsh.inc ]; then
+  source '/Users/ckn/Workspace/dev/google-cloud-sdk/path.zsh.inc'
+fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f /Users/ckn/Workspace/dev/google-cloud-sdk/completion.zsh.inc ]; then
+  source '/Users/ckn/Workspace/dev/google-cloud-sdk/completion.zsh.inc'
+fi
