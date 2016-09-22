@@ -24,9 +24,6 @@ defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 # Make Sheets fast, A "sheet" is a modal dialog which is attached to a window and asks for input from the user. (from Onyx help)
 defaults write NSGlobalDomain NSWindowResizeTime .07
 
-# Reduce transparency
-defaults write com.apple.universalaccess reduceTransparency -boolean true
-
 # Graphite Appearance / Traffic Lights
 defaults write -g AppleAquaColorVariant -int 6
 
