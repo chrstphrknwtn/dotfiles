@@ -212,6 +212,15 @@ alias -s git='git clone'
 # update
 alias update='brew update && brew upgrade && brew cleanup && n latest && npm update -g'
 
+# z [enter]
+unalias z 2> /dev/null
+z() {
+  if [[ -z "$*" ]]; then
+    cd "$(_z -l 2>&1 | fzf +s --tac | sed 's/^[0-9,.]* *//')"
+  else
+    _z "$@"
+  fi
+}
 
 
 # -----------------------------------------------------------------------------
