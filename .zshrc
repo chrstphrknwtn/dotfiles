@@ -213,11 +213,6 @@ alias -s git='git clone'
 alias update='brew update && brew upgrade && brew cleanup && n latest && npm update -g'
 
 
-# -----------------------------------------------------------------------------
-# rbenv crap
-# -----------------------------------------------------------------------------
-if hostname | grep Iris >/dev/null; then eval "$(rbenv init -)"; fi
-
 
 # -----------------------------------------------------------------------------
 # Google Cloud SDK
