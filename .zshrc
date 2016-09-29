@@ -257,3 +257,33 @@ fi
 if [ -f /Users/ckn/Workspace/dev/google-cloud-sdk/completion.zsh.inc ]; then
   source '/Users/ckn/Workspace/dev/google-cloud-sdk/completion.zsh.inc'
 fi
+
+
+cfmt() {
+  if [[ $# -ne 1 ]]; then
+    echo "Usage: cfmt <file>"
+  else
+    astyle \
+      --style=1tbs \
+      --lineend=linux \
+      --preserve-date \
+      --pad-header \
+      --indent=tab \
+      --indent-switches \
+      --align-pointer=name \
+      --align-reference=name \
+      --pad-oper \
+      --suffix=none \
+      $1
+  fi
+}
+
+
+ccw() {
+  type fswatch >/dev/null 2>&1 || { echo >&2 "fswatch required: brew install fswatch."; return 0; }
+  if [[ $# -ne 2 ]]; then
+    echo "Usage: ccm <input.c> <out>"
+  else
+    command fswatch $1 | (while read; do echo ""; cc $1 -o $2 && $2; done)
+  fi
+}
