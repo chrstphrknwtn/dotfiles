@@ -239,6 +239,10 @@ z() {
   fi
 }
 
+# prefer homebrew vim
+alias vi='/usr/local/bin/vim'
+alias vim='vi'
+
 
 # -----------------------------------------------------------------------------
 # Google Cloud SDK
