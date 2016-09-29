@@ -211,7 +211,7 @@ fancy-branch() {
 # -----------------------------------------------------------------------------
 
 # ls
-alias l="ls -lhaG"
+alias ll="ls -lhaG"
 
 # Open CWD in sublime
 alias o="subl . > /dev/null"
