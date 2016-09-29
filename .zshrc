@@ -91,6 +91,23 @@ zstyle ':completion:*:*:*:*:*' menu select
 
 
 # -----------------------------------------------------------------------------
+# less (man pages) color / style
+# -----------------------------------------------------------------------------
+
+# Bold Mode
+export LESS_TERMCAP_md=$'\E[37m' # white
+export LESS_TERMCAP_me=$'\E[38;5;248m' # grey
+
+# Standout Mode
+export LESS_TERMCAP_so=$'\E[47m\E[30m' # black on white
+export LESS_TERMCAP_se=$'\E[0m' # reset all
+
+# Underline Mode
+export LESS_TERMCAP_us=$'\E[4m' # underline
+export LESS_TERMCAP_ue=$'\E[38;5;248m\E[24m' # grey; reset underline
+
+
+# -----------------------------------------------------------------------------
 # Git
 # -----------------------------------------------------------------------------
 
