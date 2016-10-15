@@ -211,8 +211,11 @@ fancy-branch() {
 # Aliases
 # -----------------------------------------------------------------------------
 
+# Open this file
+alias zshrc='o $HOME/.zshrc'
+
 # ls
-alias ll="ls -lhaG"
+alias ll="ls -laG"
 
 # Open CWD in sublime
 alias o="subl . > /dev/null"
