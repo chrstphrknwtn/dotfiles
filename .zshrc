@@ -253,13 +253,13 @@ alias vim='vi'
 # -----------------------------------------------------------------------------
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f /Users/ckn/Workspace/dev/google-cloud-sdk/path.zsh.inc ]; then
-  source '/Users/ckn/Workspace/dev/google-cloud-sdk/path.zsh.inc'
+if [ -f $HOME/.cli/google-cloud-sdk/path.zsh.inc ]; then
+  source $HOME/.cli/google-cloud-sdk/path.zsh.inc
 fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f /Users/ckn/Workspace/dev/google-cloud-sdk/completion.zsh.inc ]; then
-  source '/Users/ckn/Workspace/dev/google-cloud-sdk/completion.zsh.inc'
+if [ -f $HOME/.cli/google-cloud-sdk/completion.zsh.inc ]; then
+  source $HOME/.cli/google-cloud-sdk/completion.zsh.inc
 fi
 
 
