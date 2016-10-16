@@ -176,6 +176,7 @@ gh() {
 
 # ctrl-b to switch branch
 fancy-branch() {
+  type fzf >/dev/null 2>&1 || { echo >&2 "git-fancy-branch: fzf required: brew install fzf."; return 0; }
   local tags localbranches remotebranches target
   tags=$(
   git tag | awk '{print "\x1b[33;1mtag\x1b[m\t" $1}') || return
@@ -215,7 +216,8 @@ fancy-branch() {
 alias zshrc='o $HOME/.zshrc'
 
 # ls
-alias ll="ls -laG"
+alias l="lm" #https://github.com/chrstphrknwtn/lm
+alias ll="ls -lahG"
 
 # Open CWD in sublime
 alias o="subl . > /dev/null"
@@ -261,33 +263,3 @@ fi
 if [ -f $HOME/.cli/google-cloud-sdk/completion.zsh.inc ]; then
   source $HOME/.cli/google-cloud-sdk/completion.zsh.inc
 fi
-
-
-cfmt() {
-  if [[ $# -ne 1 ]]; then
-    echo "Usage: cfmt <file>"
-  else
-    astyle \
-      --style=1tbs \
-      --lineend=linux \
-      --preserve-date \
-      --pad-header \
-      --indent=tab \
-      --indent-switches \
-      --align-pointer=name \
-      --align-reference=name \
-      --pad-oper \
-      --suffix=none \
-      $1
-  fi
-}
-
-
-ccw() {
-  type fswatch >/dev/null 2>&1 || { echo >&2 "fswatch required: brew install fswatch."; return 0; }
-  if [[ $# -ne 2 ]]; then
-    echo "Usage: ccm <input.c> <out>"
-  else
-    command fswatch $1 | (while read; do echo ""; cc $1 -o $2 && $2; done)
-  fi
-}
