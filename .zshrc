@@ -232,9 +232,6 @@ alias hide='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder
 # suffix
 alias -s git='git clone'
 
-# update
-alias update='softwareupdate --install --all && brew update && brew upgrade && brew cleanup && n latest && npm update -g'
-
 # z [enter]
 unalias z 2> /dev/null
 z() {

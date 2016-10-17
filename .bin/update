@@ -1,0 +1,33 @@
+#!/usr/bin/env sh
+
+# Update
+#
+# Update macOS, homebrew, node, and npm  and
+# create a manifest of installed packages.
+
+# macOS
+echo "\x1b[38;5;236m[macOS]\x1b[0m"
+softwareupdate --install --all
+
+# brew
+echo "\x1b[38;5;236m[brew]\x1b[0m"
+brew update && brew upgrade && brew cleanup
+
+# node
+echo "\x1b[38;5;236m[node]\x1b[0m"
+n latest
+
+# npm
+echo "\x1b[38;5;236m[npm]\x1b[0m"
+npm update -g
+
+# Create packages manifest
+touch $HOME/.packages
+
+# homebrew manifest
+echo "[brew]" > $HOME/.packages
+brew list >> $HOME/.packages
+
+# npm manifest
+echo "\n[npm]" >> $HOME/.packages
+npm ls -g -p --depth=0 -s | sed -n -e 's/^.*node_modules\///p' >> $HOME/.packages
