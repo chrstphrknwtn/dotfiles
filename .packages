@@ -1,12 +1,12 @@
 [brew]
 astyle
+autoconf
 clib
-cmake
+ffmpeg
 fswatch
 fzf
-gdbm
+imagemagick
 p7zip
-pcre
 zsh
 
 [npm]
@@ -17,5 +17,6 @@ firebase-tools
 live-server
 n
 nodemon
+tools.kompressor
 vmd
 xo
