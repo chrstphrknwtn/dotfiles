@@ -1,10 +1,18 @@
 #!/usr/bin/env sh
 
-command git clone https://github.com/zsh-users/antigen.git $HOME/.cli/antigen
+git clone https://github.com/zsh-users/antigen.git "$HOME/.cli/antigen"
+git clone https://github.com/chrstphrknwtn/pure.git "$HOME/.cli/pure"
 
+# rc
 for FILE in .zshrc .npmrc .vimrc
 do
-  command ln -s $PWD/$FILE $HOME/$FILE
+  ln -s $PWD/$FILE $HOME/$FILE
 done
 
-command ln -s $PWD/.bin $HOME
+# bin
+ln -s $PWD/.bin $HOME
+
+# zsh pure
+mkdir -p $HOME/.zfunctions
+ln -s "$HOME/.cli/pure/pure.zsh" "$HOME/.zfunctions/prompt_pure_setup"
+ln -s "$HOME/.cli/pure/async.zsh" "$HOME/.zfunctions/async"

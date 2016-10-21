@@ -5,9 +5,14 @@
 source $HOME/.cli/antigen/antigen.zsh
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle rupa/z
-antigen bundle chrstphrknwtn/pure
 antigen apply
 
+# -----------------------------------------------------------------------------
+# pure prompt
+# -----------------------------------------------------------------------------
+fpath=( "$HOME/.zfunctions" $fpath )
+autoload -U promptinit; promptinit
+prompt pure
 
 # -----------------------------------------------------------------------------
 # Options
