@@ -265,3 +265,10 @@ fi
 if [ -f $HOME/.cli/google-cloud-sdk/completion.zsh.inc ]; then
   source $HOME/.cli/google-cloud-sdk/completion.zsh.inc
 fi
+
+
+# -----------------------------------------------------------------------------
+# Adobe Font Development Kit for OpenType / FDK
+# -----------------------------------------------------------------------------
+export FDK_EXE="$HOME/.cli/FDK/Tools/osx"
+export PATH=${PATH}:"$HOME/.cli/FDK/Tools/osx"
