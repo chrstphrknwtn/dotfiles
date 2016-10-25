@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+# Make Watch
+# Watch a file for changes, run make in CWD, then run command.
+#
+# mw source.c ./command
+
+type fswatch >/dev/null 2>&1 || { echo >&2 "ccw: fswatch required: brew install fswatch."; exit 0; }
+
+if [[ $# -ne 2 ]]; then
+  echo "\nMake Watch\n\n  Usage:  mw <source.c> <command>\nExample:  mw program.c ./program"
+else
+  command fswatch $1 | (while read; do echo ""; make && $2; done)
+fi
