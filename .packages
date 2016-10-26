@@ -10,6 +10,7 @@ p7zip
 zsh
 
 [npm]
+browserify
 budo
 chokidar-cli
 ellis
