@@ -1,5 +1,6 @@
 [brew]
 astyle
+cairo
 clib
 ffmpeg
 fswatch
@@ -20,6 +21,7 @@ firebase-tools
 live-server
 n
 nodemon
+npm
 npm-check-updates
 tools.kompressor
 vmd
