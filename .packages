@@ -7,9 +7,13 @@ fswatch
 fzf
 imagemagick
 p7zip
+perl
+python
+ruby
 sassc
 sdl
 sdl2
+vim
 zsh
 
 [npm]
