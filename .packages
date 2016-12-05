@@ -1,10 +1,10 @@
 [brew]
 astyle
-cairo
 clib
 ffmpeg
 fswatch
 fzf
+gobject-introspection
 imagemagick
 p7zip
 perl
@@ -12,7 +12,6 @@ python
 ruby
 sassc
 sdl
-sdl2
 vim
 zsh
 
@@ -20,6 +19,7 @@ zsh
 browserify
 budo
 chokidar-cli
+design.live-images
 ellis
 firebase-tools
 live-server
