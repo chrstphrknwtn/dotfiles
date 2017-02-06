@@ -4,7 +4,6 @@ clib
 ffmpeg
 fswatch
 fzf
-gobject-introspection
 imagemagick
 p7zip
 perl
