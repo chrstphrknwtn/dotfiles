@@ -8,8 +8,8 @@
 PKG_FILE=$HOME/.dotfiles/.packages
 
 # macOS
-echo "\x1b[38;5;236m[macOS]\x1b[0m"
-softwareupdate --install --all
+# echo "\x1b[38;5;236m[macOS]\x1b[0m"
+# softwareupdate --install --all
 
 # brew
 echo "\x1b[38;5;236m[brew]\x1b[0m"
