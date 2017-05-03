@@ -33,7 +33,7 @@ SAVEHIST=100000
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
 
-mkdir -p $HOME/.z.data
+# mkdir -p $HOME/.z.data
 _Z_DATA=$HOME/.z.data/.z
 
 
