@@ -250,10 +250,3 @@ z() {
 # prefer homebrew vim
 alias vi='/usr/local/bin/vim'
 alias vim='vi'
-
-
-# -----------------------------------------------------------------------------
-# Adobe Font Development Kit for OpenType / FDK
-# -----------------------------------------------------------------------------
-export FDK_EXE="$HOME/.cli/FDK/Tools/osx"
-export PATH=${PATH}:"$HOME/.cli/FDK/Tools/osx"
