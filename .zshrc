@@ -225,7 +225,7 @@ alias l="lm" #https://github.com/chrstphrknwtn/lm
 alias ll="ls -lahG"
 
 # Open CWD in sublime
-alias o="subl . > /dev/null"
+alias o="$EDITOR ."
 
 # Flush DNS
 alias flushdns="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder"
