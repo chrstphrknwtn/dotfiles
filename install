@@ -27,6 +27,3 @@ ln -s $DOTFILES/.bin $HOME
 mkdir -p "$HOME/.zfunctions"
 ln -s "$HOME/.cli/pure/pure.zsh" "$HOME/.zfunctions/prompt_pure_setup"
 ln -s "$HOME/.cli/pure/async.zsh" "$HOME/.zfunctions/async"
-
-
-config.cson init.coffee keymap.cson snippets.cson styles.less
