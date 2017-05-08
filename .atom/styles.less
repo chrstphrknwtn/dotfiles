@@ -1,87 +1,94 @@
-
 // Colors
+// -----------------------------------------------------------------------------
 @yellow: #c1bc83;
 @light-gray: #555555;
 
-// Tooltips
-.tooltip {
-  display: none;
-  visibility: hidden;
-}
+// One Dark Theme
+// -----------------------------------------------------------------------------
+.theme-one-dark-ui {
 
-// Tree view
-@git-modified: @yellow;
-@git-ignored: @light-gray;
-
-// Active tree-view marker
-.tree-view::before {
-  background: white;
-}
-
-.list-group,
-.list-tree {
-  .generate-list-item-status-color(@color, @status) {
-    li:not(.list-nested-item).status-@{status},
-    li.list-nested-item.status-@{status} > .list-item {
-      color: @color;
-    }
-
-    li:not(.list-nested-item).selected.status-@{status},
-    li.list-nested-item.selected.status-@{status} > .list-item {
-      color: @color;
-    }
+  // Tooltips - turn them off
+  .tooltip {
+    display: none;
+    visibility: hidden;
   }
 
-  .generate-list-item-status-color(white, added);
-  .generate-list-item-status-color(@git-ignored, ignored);
-  .generate-list-item-status-color(@git-modified, modified);
-  // .generate-list-item-status-color(@text-color-removed, removed);
-  // .generate-list-item-status-color(@text-color-renamed, renamed);
-}
+  // Tree view
+  @git-modified-color: @yellow;
+  @git-ignored-color: @light-gray;
 
-// Tabs
-@tabs-accent-color: white;
-@tabs-modified-icon: @yellow;
+  // Active Project Root Header marker
+  .tree-view::before {
+    background: white;
+  }
 
-.tab-bar {
-  .tab {
-    // Active Marker
-    &::before,
-    &.active::before {
-      background: @tabs-accent-color;
-    }
-    // Close Icon
-    .close-icon {
-      &:hover {
-        color: @tabs-accent-color;
-        background-color: rgba(255,255,255,0.1);
+  // Folder / File listing git colors
+  .list-group,
+  .list-tree {
+    .generate-list-item-status-color(@color, @status) {
+      li:not(.list-nested-item).status-@{status},
+      li.list-nested-item.status-@{status} > .list-item {
+        color: @color;
+      }
+
+      li:not(.list-nested-item).selected.status-@{status},
+      li.list-nested-item.selected.status-@{status} > .list-item {
+        color: @color;
       }
     }
-    // Modified Icon
-    &.modified {
-      &:hover .close-icon {
-        color: @tabs-accent-color;
+
+    .generate-list-item-status-color(white, added);
+    .generate-list-item-status-color(@git-ignored-color, ignored);
+    .generate-list-item-status-color(@git-modified-color, modified);
+    // .generate-list-item-status-color(@text-color-removed, removed);
+    // .generate-list-item-status-color(@text-color-renamed, renamed);
+  }
+
+  // Tabs
+  @tabs-accent-color: white;
+  @tabs-modified-icon: @yellow;
+
+  .tab-bar {
+    .tab {
+      // Active Marker
+      &::before,
+      &.active::before {
+        background: @tabs-accent-color;
       }
-      &:not(:hover) .close-icon {
-        color: @tabs-modified-icon;
+      // Close Icon
+      .close-icon {
+        &:hover {
+          color: @tabs-accent-color;
+          background-color: rgba(255,255,255,0.1);
+        }
+      }
+      // Modified Icon
+      &.modified {
+        &:hover .close-icon {
+          color: @tabs-accent-color;
+        }
+        &:not(:hover) .close-icon {
+          color: @tabs-modified-icon;
+        }
+      }
+    }
+
+    // Dragging
+    .placeholder {
+      // Bar
+      &:before {
+        background-color: @tabs-accent-color;
+      }
+      // Arrow
+      &:after {
+        border: 0 none;
       }
     }
   }
-
-  // Dragging
-  .placeholder {
-    // Bar
-    &:before {
-      background-color: @tabs-accent-color;
-    }
-    // Arrow
-    &:after {
-      border: 0 none;
-    }
-  }
 }
 
-// packages
+// Packages
+// -----------------------------------------------------------------------------
 .markdown-preview[data-use-github-style] {
   padding: 45px;
   max-width: 980px;
