@@ -15,9 +15,6 @@
     userId: "914909c0-76fd-4b35-8e7b-1f0d3df3bd01"
   "markdown-preview":
     useGitHubStyle: true
-  "mono-ui":
-    fontSize: 11
-    hideDockButtons: false
   "no-title-bar":
     metaKeyMouseDrag: true
   "one-dark-ui":
