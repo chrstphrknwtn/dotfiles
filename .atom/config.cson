@@ -1,5 +1,6 @@
 "*":
   core:
+    closeDeletedFileTabs: true
     projectHome: "/Users/ckn/Workspace/dev"
     telemetryConsent: "no"
     themes: [
