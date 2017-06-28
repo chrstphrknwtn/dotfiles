@@ -1,17 +1,21 @@
 [brew]
+ffmpeg
+fswatch
 fzf
 heroku
-pcre
+imagemagick
+p7zip
 perl
-python
 ruby
 vim
 
 [npm]
+chokidar-cli
 design.live-images
 live-server
 n
 nodemon
+npm
 serve
 speed-test
 vmd
