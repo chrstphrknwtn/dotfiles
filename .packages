@@ -4,12 +4,18 @@ fswatch
 fzf
 heroku
 imagemagick
+libyaml
+mysql
 p7zip
 perl
-ruby
-vim
+qt@5.5
+rbenv
+rbenv-gemset
+redis
+v8
 
 [npm]
+browserify
 chokidar-cli
 design.live-images
 live-server
