@@ -6,7 +6,7 @@
 #
 # scw source.swift ./bin
 
-type fswatch >/dev/null 2>&1 || { echo >&2 "ccw: fswatch required: brew install fswatch."; exit 0; }
+type fswatch >/dev/null 2>&1 || { echo >&2 "scw: fswatch required: brew install fswatch."; exit 0; }
 
 if [[ $# -ne 2 ]]; then
   echo "\nSwift Compile Watch\n\n  Usage:  scw <source.swift> <bin>\nExample:  scw program.swift ./program"
