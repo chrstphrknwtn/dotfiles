@@ -6,7 +6,6 @@ heroku
 imagemagick
 libyaml
 mysql
-p7zip
 perl
 qt@5.5
 rbenv
