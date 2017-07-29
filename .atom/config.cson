@@ -1,6 +1,7 @@
 "*":
   core:
     closeDeletedFileTabs: true
+    excludeVcsIgnoredPaths: false
     projectHome: "/Users/ckn/Workspace/dev"
     telemetryConsent: "no"
     themes: [
@@ -22,5 +23,6 @@
     fontSize: 11
   "tree-view":
     hideIgnoredNames: true
+    hideVcsIgnoredFiles: false
   welcome:
     showOnStartup: false
