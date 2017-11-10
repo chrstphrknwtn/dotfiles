@@ -13,17 +13,18 @@
     fontFamily: "SF Mono"
     fontSize: 11
     scrollPastEnd: true
+    tabType: "hard"
   "exception-reporting":
     userId: "914909c0-76fd-4b35-8e7b-1f0d3df3bd01"
   linter:
     lintPreviewTabs: false
   "linter-ui-default":
     panelHeight: 99
-    showPanel: true
   "markdown-preview":
     useGitHubStyle: true
   "no-title-bar":
-    metaKeyMouseDrag: true
+    enableLiberalWindowDragging: true
+    metaKeyMouseDrag: false
   "one-dark-ui":
     fontSize: 11
   "tree-view":
