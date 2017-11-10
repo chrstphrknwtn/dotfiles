@@ -2,6 +2,7 @@
 // -----------------------------------------------------------------------------
 @yellow: #c1bc83;
 @light-gray: #555555;
+@tab-close-icon-top: 1rem;
 
 // One Dark Theme
 // -----------------------------------------------------------------------------
@@ -47,7 +48,9 @@
   @tabs-modified-icon: @yellow;
 
   .tab-bar {
+    height: initial;
     .tab {
+      line-height: 40px;
       // Active Marker
       &::before,
       &.active::before {
@@ -55,6 +58,7 @@
       }
       // Close Icon
       .close-icon {
+        top: @tab-close-icon-top;
         &:hover {
           color: @tabs-accent-color;
           background-color: rgba(255,255,255,0.1);
@@ -62,6 +66,9 @@
       }
       // Modified Icon
       &.modified {
+        .close-icon {
+          top: @tab-close-icon-top;
+        }
         &:hover .close-icon {
           color: @tabs-accent-color;
         }
