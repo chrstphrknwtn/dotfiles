@@ -1,17 +1,24 @@
 [brew]
+astyle
+avrdude
 ffmpeg
 fswatch
 fzf
-heroku
-imagemagick
-libyaml
 mysql
+neofetch
 perl
+python
 qt@5.5
 rbenv
 rbenv-gemset
 redis
+ruby
+sassc
+schroedinger
+swiftlint
 v8
+youtube-dl
+zsh
 
 [npm]
 browserify
@@ -20,8 +27,6 @@ design.live-images
 live-server
 n
 nodemon
-npm
-serve
 speed-test
 vmd
 xo
