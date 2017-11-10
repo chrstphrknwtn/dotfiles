@@ -10,5 +10,5 @@ type fswatch >/dev/null 2>&1 || { echo >&2 "ccw: fswatch required: brew install 
 if [[ $# -ne 2 ]]; then
   echo "\nC Compile Watch\n\n  Usage:  ccw <source.c> <bin>\nExample:  ccw program.c ./program"
 else
-  command fswatch $1 | (while read; do echo ""; cc $1 -o $2 && $2; done)
+  command fswatch $1 | (while read; do echo ""; cc -std=c99 $1 -o $2 && $2; done)
 fi
