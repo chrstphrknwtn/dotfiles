@@ -247,11 +247,9 @@ z() {
   fi
 }
 
-# lux(1) shortcuts - https://github.com/chrstphrknwtn/lux
-for i in {0..10}
-do
-  alias $i="lux $i"
-done
+# prefer homebrew vim
+alias vi='/usr/local/bin/vim'
+alias vim='vi'
 
 
 # -----------------------------------------------------------------------------
