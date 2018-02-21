@@ -1,6 +1,7 @@
 // Colors
 // -----------------------------------------------------------------------------
 @yellow: #c1bc83;
+@dark-gray: #333333;
 @light-gray: #555555;
 @tab-close-icon-top: 1rem;
 
@@ -15,6 +16,11 @@
   // Active Project Root Header marker
   .tree-view::before {
     background: white;
+  }
+
+  // App focusses, active tree view item
+  .tree-view:focus .selected::before {
+    background: @dark-gray;
   }
 
   atom-dock .tab-bar {

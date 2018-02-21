@@ -24,7 +24,6 @@
     fontFamily: "SF Mono"
     fontSize: 11
     scrollPastEnd: true
-    tabType: "hard"
   "exception-reporting":
     userId: "914909c0-76fd-4b35-8e7b-1f0d3df3bd01"
   linter:
@@ -40,6 +39,9 @@
     fontSize: 11
   "tree-view":
     hideIgnoredNames: true
-    hideVcsIgnoredFiles: false
+    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
+".js.jsx.react.source":
+  editor:
+    softWrap: true
