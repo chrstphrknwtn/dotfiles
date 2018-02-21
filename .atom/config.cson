@@ -2,6 +2,17 @@
   core:
     closeDeletedFileTabs: true
     excludeVcsIgnoredPaths: false
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "desktop.ini"
+      ".next"
+      "node_modules"
+    ]
     projectHome: "/Users/ckn/Workspace/dev"
     telemetryConsent: "no"
     themes: [
