@@ -13,6 +13,7 @@ rbenv-gemset
 redis
 sassc
 schroedinger
+sphinx-doc
 swiftlint
 telnet
 texi2html
