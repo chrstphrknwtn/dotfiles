@@ -1,120 +1,133 @@
-// Colors
-// -----------------------------------------------------------------------------
-@yellow: #c1bc83;
-@dark-gray: #333333;
-@light-gray: #555555;
-@tab-close-icon-top: 1rem;
-
-// One Dark Theme
-// -----------------------------------------------------------------------------
-.theme-one-dark-ui {
-
-  // Tree view
-  @git-modified-color: @yellow;
-  @git-ignored-color: @light-gray;
-
-  // Active Project Root Header marker
-  .tree-view::before {
-    background: white;
-  }
-
-  // App focusses, active tree view item
-  .tree-view:focus .selected::before {
-    background: @dark-gray;
-  }
-
-  atom-dock .tab-bar {
-    display: none;
-  }
-
-  // Folder / File listing git colors
-  .list-group,
-  .list-tree {
-    .generate-list-item-status-color(@color, @status) {
-      li:not(.list-nested-item).status-@{status},
-      li.list-nested-item.status-@{status} > .list-item {
-        color: @color;
-      }
-
-      li:not(.list-nested-item).selected.status-@{status},
-      li.list-nested-item.selected.status-@{status} > .list-item {
-        color: @color;
-      }
-    }
-
-    .generate-list-item-status-color(white, added);
-    .generate-list-item-status-color(@git-ignored-color, ignored);
-    .generate-list-item-status-color(@git-modified-color, modified);
-    // .generate-list-item-status-color(@text-color-removed, removed);
-    // .generate-list-item-status-color(@text-color-renamed, renamed);
-  }
-
-  // Tabs
-  @tabs-accent-color: white;
-  @tabs-modified-icon: @yellow;
-
-  .tab-bar {
-    height: initial;
-    .tab {
-      line-height: 40px;
-      // Active Marker
-      &::before,
-      &.active::before {
-        background: @tabs-accent-color;
-      }
-      // Close Icon
-      .close-icon {
-        top: @tab-close-icon-top;
-        &:hover {
-          color: @tabs-accent-color;
-          background-color: rgba(255,255,255,0.1);
-        }
-      }
-      // Modified Icon
-      &.modified {
-        .close-icon {
-          top: @tab-close-icon-top;
-        }
-        &:hover .close-icon {
-          color: @tabs-accent-color;
-        }
-        &:not(:hover) .close-icon {
-          color: @tabs-modified-icon;
-        }
-      }
-    }
-
-    // Dragging
-    .placeholder {
-      // Bar
-      &:before {
-        background-color: @tabs-accent-color;
-      }
-      // Arrow
-      &:after {
-        border: 0 none;
-      }
-    }
-  }
-}
-
-// Packages
-// -----------------------------------------------------------------------------
-.markdown-preview[data-use-github-style] {
-  padding: 45px;
-  max-width: 980px;
-  font-family: 'BlinkMacSystemFont', sans-serif;
-
-  a {
-    color: #0366d6;
-  }
-}
-
-// Et Cetera
-// -----------------------------------------------------------------------------
-
-// Tooltips - turn them off
-.tooltip {
-  display: none;
-  visibility: hidden;
-}
+// // Atom 1.24.0
+//
+// // Colors
+// // -----------------------------------------------------------------------------
+// @yellow: #c1bc83;
+//
+// @darker-gray: #212121;
+// @dark-gray: #333333;
+// @light-gray: #555555;
+//
+// @tint-lighten: rgba(255,255,255,0.05);
+// @tint-darken: rgba(0,0,0,0.1);
+//
+// // One Dark Theme Overrides
+// // -----------------------------------------------------------------------------
+// .theme-one-dark-ui {
+//
+//   // Tree view
+//   // ---------------------------------------------------------------------------
+//   @git-modified-color: @yellow;
+//   @git-ignored-color: @light-gray;
+//
+//   // Selected item
+//   .tree-view .selected::before,
+//   .tree-view:focus .selected::before {
+//     background: @tint-lighten;
+//   }
+//
+//   // 'Project' header
+//   atom-dock .tab-bar {
+//     display: none;
+//   }
+//
+//   // Folder / File listing git colors
+//   .list-group,
+//   .list-tree {
+//     .generate-list-item-status-color(@color, @status) {
+//       li:not(.list-nested-item).status-@{status},
+//       li.list-nested-item.status-@{status} > .list-item {
+//         color: @color;
+//       }
+//
+//       li:not(.list-nested-item).selected.status-@{status},
+//       li.list-nested-item.selected.status-@{status} > .list-item {
+//         color: @color;
+//       }
+//     }
+//
+//     .generate-list-item-status-color(white, added);
+//     .generate-list-item-status-color(@git-ignored-color, ignored);
+//     .generate-list-item-status-color(@git-modified-color, modified);
+//     // .generate-list-item-status-color(@text-color-removed, removed);
+//     // .generate-list-item-status-color(@text-color-renamed, renamed);
+//   }
+//
+//   // Tabs
+//   // ---------------------------------------------------------------------------
+//   @tabs-accent-color: white;
+//   @tabs-modified-icon-color: white;
+//   @tab-close-icon-top: 1rem;
+//
+//   .tab-bar {
+//     height: initial;
+//     .tab {
+//       line-height: 40px;
+//       // Active Marker
+//       &::before,
+//       &.active::before {
+//         background: @tabs-accent-color;
+//       }
+//       // Close Icon
+//       .close-icon {
+//         top: @tab-close-icon-top;
+//         &:hover {
+//           color: @tabs-accent-color;
+//           background-color: @tint-lighten;
+//         }
+//       }
+//       // Modified Icon
+//       &.modified {
+//         .close-icon {
+//           top: @tab-close-icon-top;
+//         }
+//         &:hover .close-icon {
+//           color: @tabs-accent-color;
+//         }
+//         &:not(:hover) .close-icon {
+//           color: @tabs-modified-icon-color;
+//         }
+//       }
+//     }
+//
+//     // Dragging
+//     .placeholder {
+//       // Bar
+//       &:before {
+//         background-color: @tabs-accent-color;
+//       }
+//       // Arrow
+//       &:after {
+//         border: 0 none;
+//       }
+//     }
+//   }
+//
+//   // Git Tab
+//   // ---------------------------------------------------------------------------
+//   .github-StagingView-group.is-focused .is-selected,
+//   .github-StagingView:focus .github-StagingView-group.is-focused .is-selected {
+//     background-color: @tint-lighten;
+//   }
+// }
+//
+// // Packages
+// // -----------------------------------------------------------------------------
+// .markdown-preview[data-use-github-style] {
+//   padding: 45px;
+//   max-width: 980px;
+//   font-family: 'BlinkMacSystemFont', sans-serif;
+//
+//   a {
+//     color: #0366d6;
+//   }
+// }
+//
+// // Et Cetera
+// // -----------------------------------------------------------------------------
+//
+// // Tooltips - turn them off
+// .tooltip {
+//   display: none;
+//   visibility: hidden;
+// }

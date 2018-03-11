@@ -1,6 +1,9 @@
 "*":
   core:
     closeDeletedFileTabs: true
+    disabledPackages: [
+      "metrics"
+    ]
     excludeVcsIgnoredPaths: false
     ignoredNames: [
       ".git"
@@ -12,11 +15,12 @@
       "desktop.ini"
       ".next"
       "node_modules"
+      "package-lock.json"
     ]
     projectHome: "/Users/ckn/Workspace/dev"
     telemetryConsent: "no"
     themes: [
-      "one-dark-ui"
+      "mono-ui"
       "mono-syntax"
     ]
     titleBar: "custom-inset"
@@ -29,17 +33,18 @@
   linter:
     lintPreviewTabs: false
   "linter-ui-default":
-    panelHeight: 99
+    alwaysTakeMinimumSpace: true
+    panelHeight: 56.5
   "markdown-preview":
     useGitHubStyle: true
+  "mono-ui":
+    fontSize: 11
+    hideDockButtons: true
   "no-title-bar":
     enableLiberalWindowDragging: true
     metaKeyMouseDrag: false
-  "one-dark-ui":
-    fontSize: 11
   "tree-view":
     hideIgnoredNames: true
-    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
 ".js.jsx.react.source":
