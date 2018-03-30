@@ -3,6 +3,7 @@
 # -----------------------------------------------------------------------------
 
 source $HOME/.cli/antigen/antigen.zsh
+antigen bundle supercrabtree/k
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle rupa/z
 antigen apply
@@ -250,6 +251,9 @@ z() {
 # prefer homebrew vim
 alias vi='/usr/local/bin/vim'
 alias vim='vi'
+
+# contentful-cli shortcut
+alias cf='contentful'
 
 
 # -----------------------------------------------------------------------------
