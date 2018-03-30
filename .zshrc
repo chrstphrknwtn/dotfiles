@@ -2,7 +2,7 @@
 # zsh setup
 # -----------------------------------------------------------------------------
 
-source $HOME/.cli/antigen/antigen.zsh
+source $HOME/.zsh/antigen/antigen.zsh
 antigen bundle supercrabtree/k
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle rupa/z

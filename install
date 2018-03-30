@@ -1,12 +1,13 @@
 #!/usr/bin/env sh
 
+ZSH_EXTRAS="$HOME/.zsh"
 DOTFILES="$HOME/.dotfiles"
 
 git clone https://github.com/chrstphrknwtn/dotfiles.git $DOTFILES
 
-mkdir -p "$HOME/.cli"
-git clone https://github.com/zsh-users/antigen.git "$HOME/.cli/antigen"
-git clone https://github.com/chrstphrknwtn/pure.git "$HOME/.cli/pure"
+mkdir -p "$ZSH_EXTRAS"
+git clone https://github.com/zsh-users/antigen.git "$ZSH_EXTRAS/antigen"
+git clone https://github.com/chrstphrknwtn/pure.git "$ZSH_EXTRAS/pure"
 
 # rc
 for FILE in .zshrc .npmrc .vimrc
@@ -21,9 +22,9 @@ do
 done
 
 # bin
-ln -s $DOTFILES/.bin $HOME
+ln -s $DOTFILES/.bin $HOME/.bin
 
 # zsh pure
 mkdir -p "$HOME/.zfunctions"
-ln -s "$HOME/.cli/pure/pure.zsh" "$HOME/.zfunctions/prompt_pure_setup"
-ln -s "$HOME/.cli/pure/async.zsh" "$HOME/.zfunctions/async"
+ln -s "$ZSH_EXTRAS/pure/pure.zsh" "$HOME/.zfunctions/prompt_pure_setup"
+ln -s "$ZSH_EXTRAS/pure/async.zsh" "$HOME/.zfunctions/async"
