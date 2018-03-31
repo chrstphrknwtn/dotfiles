@@ -25,7 +25,7 @@ do
 done
 
 # bin
-ln -s $DOTFILES/.bin $HOME/.bin
+ln -s $DOTFILES/.bin $HOME
 
 # zsh pure
 mkdir -p "$HOME/.zfunctions"
