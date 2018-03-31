@@ -15,6 +15,9 @@ do
   ln -s $DOTFILES/$FILE $HOME/$FILE
 done
 
+# ssh
+ln -s $DOTFILES/.ssh/config $HOME/.ssh/config
+
 # atom
 for FILE in config.cson init.coffee keymap.cson snippets.cson styles.less
 do
