@@ -17,7 +17,7 @@ brew update && brew upgrade && brew cleanup
 
 # node
 echo "\x1b[38;5;236m[node]\x1b[0m"
-n latest
+n lts
 
 # npm
 echo "\x1b[38;5;236m[npm]\x1b[0m"
