@@ -21,6 +21,7 @@ n lts
 
 # npm
 echo "\x1b[38;5;236m[npm]\x1b[0m"
+npm i npm -g
 npm update -g
 
 # Create packages manifest
