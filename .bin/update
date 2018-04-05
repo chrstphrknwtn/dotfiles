@@ -29,7 +29,7 @@ touch $PKG_FILE
 
 # homebrew manifest
 echo "[brew]" > $PKG_FILE
-brew leaves >> $PKG_FILE
+brew leaves --full-name >> $PKG_FILE
 
 # npm manifest
 echo "\n[npm]" >> $PKG_FILE
