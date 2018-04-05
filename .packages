@@ -4,9 +4,11 @@ clib
 ffmpeg
 fswatch
 fzf
+gobject-introspection
 heroku/brew/heroku
 imagemagick
 mysql
+netlify/netlifyctl/netlifyctl
 redis
 sassc
 zsh
