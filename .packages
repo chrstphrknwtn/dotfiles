@@ -11,23 +11,16 @@ mysql
 netlify/netlifyctl/netlifyctl
 redis
 sassc
+sphinx-doc
 zsh
 
 [npm]
-browserify
 chokidar-cli
 contentful-cli
-create-next-app
-create-react-app
-design.live-images
-eslint
 live-server
 n
 nodemon
 npm
-serve
-skpm
 speed-test
-trash-cli
 vmd
 xo

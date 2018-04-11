@@ -162,7 +162,7 @@ glb() {
 alias glg='git log --graph --decorate --all --pretty="$git_log_defaults"'
 alias glv='git log --decorate --all --pretty="$git_log_defaults"'
 
-# Open current repo in browsers
+# Open current repo in default browser
 gh() {
   giturl=$(git config --get remote.origin.url)
   if [ $giturl ]; then
@@ -224,7 +224,7 @@ alias zshrc='o $HOME/.zshrc'
 alias l="lm" #https://github.com/chrstphrknwtn/lm
 alias ll="ls -lahG"
 
-# Open CWD in sublime
+# Open CWD in EDITOR
 alias o="$EDITOR ."
 
 # Flush DNS
@@ -234,7 +234,7 @@ alias flushdns="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder"
 alias show='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hide='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
-# suffix
+# .git suffix: paste raw ssh git url to clone
 alias -s git='git clone'
 
 # z [enter]
@@ -247,9 +247,6 @@ z() {
   fi
 }
 
-# prefer homebrew vim
-alias vi='/usr/local/bin/vim'
-alias vim='vi'
-
 # contentful-cli shortcut
 alias cf='contentful'
+alias nf='netlifyctl'
