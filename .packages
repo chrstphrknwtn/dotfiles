@@ -12,6 +12,7 @@ netlify/netlifyctl/netlifyctl
 redis
 sassc
 sphinx-doc
+youtube-dl
 zsh
 
 [npm]
