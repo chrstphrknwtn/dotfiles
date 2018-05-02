@@ -26,6 +26,12 @@ do
   ln -s $DOTFILES/.atom/$FILE $HOME/.atom/$FILE
 done
 
+# git
+for FILE in .gitignore .gitconfig
+do
+  ln -s $DOTFILES/$FILE $HOME/$FILE
+done
+
 # bin
 ln -s $DOTFILES/.bin $HOME
 

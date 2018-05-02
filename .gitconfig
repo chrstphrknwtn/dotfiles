@@ -1,0 +1,13 @@
+[user]
+	name = Christopher Newton
+	email = christopher.k.newton@me.com
+[core]
+	excludesfile = ~/.gitignore
+	editor = vim
+[credential]
+	helper = osxkeychain
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
