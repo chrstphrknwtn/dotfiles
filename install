@@ -16,9 +16,11 @@ do
 done
 
 # ssh
+mkdir -p "$HOME/.ssh"
 ln -s $DOTFILES/.ssh/config $HOME/.ssh/config
 
 # atom
+mkdir -p "$HOME/.atom"
 for FILE in config.cson init.coffee keymap.cson snippets.cson styles.less
 do
   ln -s $DOTFILES/.atom/$FILE $HOME/.atom/$FILE
