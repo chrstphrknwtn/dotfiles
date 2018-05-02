@@ -80,6 +80,7 @@ export PATH=$PATH:/sbin
 export PATH=$PATH:/usr/sbin
 export PATH=$PATH:/usr/local/heroku/bin
 export PATH=$PATH:$HOME/.bin
+export PATH=$PATH:~/.npm-global/bin
 
 
 # -----------------------------------------------------------------------------
