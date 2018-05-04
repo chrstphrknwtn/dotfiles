@@ -72,6 +72,7 @@ searchdown() {
 # Path
 # -----------------------------------------------------------------------------
 
+export PATH=$HOME/.npm-global/bin:$PATH
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/usr/local/sbin
 export PATH=$PATH:/usr/bin
@@ -80,7 +81,6 @@ export PATH=$PATH:/sbin
 export PATH=$PATH:/usr/sbin
 export PATH=$PATH:/usr/local/heroku/bin
 export PATH=$PATH:$HOME/.bin
-export PATH=$PATH:~/.npm-global/bin
 
 
 # -----------------------------------------------------------------------------
