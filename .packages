@@ -6,9 +6,12 @@ fswatch
 fzf
 gobject-introspection
 heroku/brew/heroku
+icu4c
 imagemagick
 mysql
 netlify/netlifyctl/netlifyctl
+qt@5.5
+rbenv-gemset
 redis
 sassc
 sphinx-doc
