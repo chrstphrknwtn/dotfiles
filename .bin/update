@@ -2,14 +2,10 @@
 
 # Update
 #
-# Update macOS, homebrew, node, and npm
+# Update homebrew, node, npm and atom
 # and create a manifest of installed packages.
 
 PKG_FILE=$HOME/.dotfiles/.packages
-
-# macOS
-# echo "\x1b[38;5;236m[macOS]\x1b[0m"
-# softwareupdate --install --all
 
 # brew
 echo "\x1b[38;5;236m[brew]\x1b[0m"
@@ -23,6 +19,10 @@ n lts
 echo "\x1b[38;5;236m[npm]\x1b[0m"
 # npm i npm -g
 npm update -g
+
+# atom
+echo "\x1b[38;5;236m[atom]\x1b[0m"
+apm upgrade
 
 # Create packages manifest
 touch $PKG_FILE
