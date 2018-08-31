@@ -27,6 +27,7 @@
   editor:
     fontFamily: "SF Mono"
     fontSize: 11
+    preferredLineLength: 120
     scrollPastEnd: true
   "exception-reporting":
     userId: "914909c0-76fd-4b35-8e7b-1f0d3df3bd01"
@@ -34,7 +35,8 @@
     lintPreviewTabs: false
   "linter-ui-default":
     alwaysTakeMinimumSpace: true
-    panelHeight: 56.5
+    panelHeight: 174
+    showPanel: true
   "markdown-preview":
     useGitHubStyle: true
   "mono-ui":
