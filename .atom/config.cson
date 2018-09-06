@@ -35,7 +35,7 @@
     lintPreviewTabs: false
   "linter-ui-default":
     alwaysTakeMinimumSpace: true
-    panelHeight: 174
+    panelHeight: 191
     showPanel: true
   "markdown-preview":
     useGitHubStyle: true

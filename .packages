@@ -19,13 +19,17 @@ n
 nodemon
 npm
 serve
+speed-test
+typescript
 vmd
 xo
 
 [atom]
+atom-typescript@12.6.3
 block-select@1.0.0
 busy-signal@1.4.3
 emmet@2.4.3
+hyperclick@0.1.5
 intentions@1.1.5
 linter@2.2.0
 linter-ui-default@1.7.1
