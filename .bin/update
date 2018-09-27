@@ -13,11 +13,11 @@ brew update && brew upgrade && brew cleanup
 
 # node
 echo "\x1b[38;5;236m[node]\x1b[0m"
-n lts
+n latest
 
 # npm
 echo "\x1b[38;5;236m[npm]\x1b[0m"
-# npm i npm -g
+npm i npm -g
 npm update -g
 
 # atom
