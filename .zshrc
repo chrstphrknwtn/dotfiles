@@ -120,7 +120,7 @@ export LESS_TERMCAP_ue=$'\E[38;5;248m\E[24m' # grey; reset underline
 
 export GIT_MERGE_AUTOEDIT=no
 
-git_log_defaults="%C(dim)%h %>(13)%cr  %Creset%<(76,trunc)%s %C(dim)%<(20,trunc)%cn%d"
+git_log_defaults="%C(dim)%h %>(15)%cr  %Creset%<(76,trunc)%s %C(dim)%<(20,trunc)%cn%d"
 
 # No arguments: `git status`
 # With arguments: acts like `git`
