@@ -479,17 +479,17 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>1316 398 793 380 0 0 2880 1598 </string>
+	<string>-1094 343 793 246 -1200 -300 1200 1920 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>1052 1106 400 129 0 0 2880 1598 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>1130 904 620 392 0 0 2880 1598 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1086 232 928 394 0 0 2880 1598 </string>
+	<string>-1013 899 770 429 -1200 -300 1200 1920 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1798 0 1081 1598 0 0 2880 1598 </string>
+	<string>-1200 -300 1200 1898 -1200 -300 1200 1920 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>1749 581 1130 1017 0 0 2880 1598 </string>
+	<string>1687 575 1130 1017 0 0 2880 1598 </string>
 	<key>NeverWarnAboutShortLivedSessions_C3FB0912-96D1-401F-85EC-13A70854242E</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_C3FB0912-96D1-401F-85EC-13A70854242E_selection</key>
@@ -1432,6 +1432,8 @@
 			<array/>
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
+			<key>Thin Strokes</key>
+			<integer>3</integer>
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Triggers</key>
@@ -1447,7 +1449,7 @@
 			<key>Use Italic Font</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>1.0696947948042168</real>
+			<real>1</real>
 			<key>Visual Bell</key>
 			<false/>
 			<key>Window Type</key>
@@ -1550,7 +1552,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-07-31T02:27:15Z</date>
+	<date>2018-09-21T04:31:40Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -1573,6 +1575,8 @@
 	<integer>6</integer>
 	<key>TabStyle</key>
 	<integer>0</integer>
+	<key>TabStyleWithAutomaticOption</key>
+	<integer>1</integer>
 	<key>TabViewType</key>
 	<integer>0</integer>
 	<key>ThreeFingerEmulates</key>
@@ -1606,7 +1610,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.2.0beta9</string>
+	<string>3.2.1beta4</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
