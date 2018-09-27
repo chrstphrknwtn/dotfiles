@@ -1,4 +1,5 @@
 [brew]
+cloc
 coreutils
 ffmpeg
 fzf
