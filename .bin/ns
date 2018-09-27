@@ -18,7 +18,7 @@ try {
   }
 }
 
-if (!pkg.engines.node) {
+if (!pkg.engines || !pkg.engines.node) {
   exitFailure('No node engine specified in package.json.');
 }
 
