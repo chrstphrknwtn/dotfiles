@@ -3,6 +3,7 @@
     closeDeletedFileTabs: true
     disabledPackages: [
       "metrics"
+      "linter-xo"
     ]
     excludeVcsIgnoredPaths: false
     ignoredNames: [
@@ -27,7 +28,6 @@
   editor:
     fontFamily: "SF Mono"
     fontSize: 11
-    preferredLineLength: 120
     scrollPastEnd: true
   "exception-reporting":
     userId: "914909c0-76fd-4b35-8e7b-1f0d3df3bd01"
@@ -36,7 +36,6 @@
   "linter-ui-default":
     alwaysTakeMinimumSpace: true
     panelHeight: 191
-    showPanel: true
   "markdown-preview":
     useGitHubStyle: true
   "mono-ui":
