@@ -1,0 +1,31 @@
+#!/usr/bin/env node
+
+const path = require('path');
+const exec = require('child_process').exec;
+
+function exitFailure(message) {
+  console.log(message);
+  process.exit(1);
+}
+
+let pkg;
+
+try {
+  pkg = require(path.join(process.cwd(), 'package.json'));
+} catch (e) {
+  if (e.code === 'MODULE_NOT_FOUND') {
+    exitFailure('Error loading package.json.');
+  }
+}
+
+if (!pkg.engines.node) {
+  exitFailure('No node engine specified in package.json.');
+}
+
+console.log(`Switching to node v${pkg.engines.node}`);
+exec(`n ${pkg.engines.node}`, (err, stdout, stderr) => {
+  if (err) {
+    exitFailure(err);
+  }
+  console.log(stdout);
+});
