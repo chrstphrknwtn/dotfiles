@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+type convert >/dev/null 2>&1 || { echo >&2 "bmp2tif: imagemagick required: brew install imagemagick"; exit 0; }
+
+ADOBE_RGB_PROFILE="/Library/Application Support/Adobe/Color/Profiles/Recommended/AdobeRGB1998.icc"
+SRGB_PROFILE="/Library/Application Support/Adobe/Color/Profiles/Recommended/sRGB Color Space Profile.icm"
+
+command mkdir -p ./tiff
+
+for BMP in *.BMP; do
+  printf "Converting $BMP\n"
+  TIFF=${BMP%.BMP}.tif
+  command convert -units pixelsperinch -density 72 -profile "${SRGB_PROFILE}" "${BMP}" -profile "${ADOBE_RGB_PROFILE}" -compress ZIP "./tiff/${TIFF}" &> /dev/null
+done

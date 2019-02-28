@@ -1,0 +1,20 @@
+#!/usr/bin/env sh
+
+## NOTES
+##
+## 'Catrom' filter is effectively a 'bicubic' resample when reducing the image
+## http://www.imagemagick.org/Usage/filter/#catrom-c
+
+type convert >/dev/null 2>&1 || { echo >&2 "tif2jpg: imagemagick required: brew install imagemagick"; exit 0; }
+
+MAX_DIMENSION=2560
+ADOBE_RGB_PROFILE="/Library/Application Support/Adobe/Color/Profiles/Recommended/AdobeRGB1998.icc"
+SRGB_PROFILE="/Library/Application Support/Adobe/Color/Profiles/Recommended/sRGB Color Space Profile.icm"
+
+for TIFF in *.tif; do
+  printf "Converting $TIFF\n"
+  JPEG_LOWRES=${TIFF%.tif}\-lowres.jpg
+  JPEG_HIGHRES=${TIFF%.tif}\-highres.jpg
+  command convert -strip -profile "${ADOBE_RGB_PROFILE}" -units pixelsperinch -density 72 -quality 100 -filter Catrom -resize "${MAX_DIMENSION}x${MAX_DIMENSION}>" "${TIFF}" -profile "${SRGB_PROFILE}" "${JPEG_LOWRES}" &> /dev/null
+  command convert -strip -profile "${ADOBE_RGB_PROFILE}" -units pixelsperinch -density 300 -quality 100 "${TIFF}" -profile "${SRGB_PROFILE}" "${JPEG_HIGHRES}" &> /dev/null
+done
