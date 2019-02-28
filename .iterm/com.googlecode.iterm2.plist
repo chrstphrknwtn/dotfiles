@@ -24,6 +24,8 @@
 	<string>manual</string>
 	<key>AutoHideTmuxClientSession</key>
 	<false/>
+	<key>CGFontRenderingFontSmoothingDisabled</key>
+	<false/>
 	<key>CheckTestRelease</key>
 	<true/>
 	<key>ClosingHotkeySwitchesSpaces</key>
@@ -389,7 +391,7 @@
 	<key>DimOnlyText</key>
 	<true/>
 	<key>DisableFullscreenTransparency</key>
-	<false/>
+	<true/>
 	<key>EnableRendezvous</key>
 	<false/>
 	<key>FocusFollowsMouse</key>
@@ -480,16 +482,20 @@
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>-1094 343 793 246 -1200 -300 1200 1920 </string>
+	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
+	<string>-908 1009 616 174 -1200 -300 1200 1920 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>1052 1106 400 129 0 0 2880 1598 </string>
+	<string>1240 1101 400 129 0 0 2880 1597 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>1130 904 620 392 0 0 2880 1598 </string>
+	<string>1130 903 620 392 0 0 2880 1597 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>-1013 899 770 429 -1200 -300 1200 1920 </string>
+	<string>-976 838 918 514 -1200 -300 1200 1920 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1200 -300 1200 1898 -1200 -300 1200 1920 </string>
+	<string>-1130 606 1130 951 -1200 -300 1200 1920 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>1687 575 1130 1017 0 0 2880 1598 </string>
+	<string>-1133 667 1130 951 -1200 -300 1200 1920 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>-1130 -16 1130 951 -1200 -300 1200 1920 </string>
 	<key>NeverWarnAboutShortLivedSessions_C3FB0912-96D1-401F-85EC-13A70854242E</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_C3FB0912-96D1-401F-85EC-13A70854242E_selection</key>
@@ -1285,7 +1291,7 @@
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>1000</integer>
+			<integer>0</integer>
 			<key>Scrollback With Status Bar</key>
 			<false/>
 			<key>Scrollback in Alternate Screen</key>
@@ -1438,8 +1444,10 @@
 			<real>0.0</real>
 			<key>Triggers</key>
 			<array/>
+			<key>Unicode Version</key>
+			<integer>9</integer>
 			<key>Unlimited Scrollback</key>
-			<false/>
+			<true/>
 			<key>Use Bold Font</key>
 			<false/>
 			<key>Use Bright Bold</key>
@@ -1458,6 +1466,8 @@
 			<string>/Users/ckn</string>
 		</dict>
 	</array>
+	<key>NoSyncHaveWarnedAboutIncompatibleSoftware</key>
+	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
@@ -1494,6 +1504,8 @@
 	<false/>
 	<key>PasteFromClipboard</key>
 	<false/>
+	<key>PasteTabToStringTabStopSize</key>
+	<integer>4</integer>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -1552,7 +1564,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-09-21T04:31:40Z</date>
+	<date>2018-11-25T07:09:38Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -1566,7 +1578,7 @@
 	<key>SmartPlacement</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
-	<real>0.10000000149011612</real>
+	<real>0.10000000000000001</real>
 	<key>StretchTabsToFillBar</key>
 	<true/>
 	<key>SwitchTabModifier</key>
@@ -1593,6 +1605,8 @@
 	<true/>
 	<key>UseLionStyleFullscreen</key>
 	<true/>
+	<key>UseMetal</key>
+	<true/>
 	<key>WebKitDefaultFontSize</key>
 	<integer>11</integer>
 	<key>WebKitStandardFont</key>
@@ -1610,7 +1624,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.2.1beta4</string>
+	<string>3.2.6beta4</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
