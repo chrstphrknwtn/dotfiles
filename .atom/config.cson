@@ -3,7 +3,6 @@
     closeDeletedFileTabs: true
     disabledPackages: [
       "metrics"
-      "linter-xo"
     ]
     excludeVcsIgnoredPaths: false
     ignoredNames: [
