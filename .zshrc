@@ -258,6 +258,6 @@ alias run='ns && yarn install && yarn run dev'
 # -----------------------------------------------------------------------------
 # Rails
 # -----------------------------------------------------------------------------
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
 # capybara-webkit gem needs qmake from qt to build, brew install qt@5.5
-export PATH=$PATH:/usr/local/opt/qt@5.5/bin
+# export PATH=$PATH:/usr/local/opt/qt@5.5/bin
