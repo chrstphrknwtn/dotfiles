@@ -9,8 +9,8 @@ mkdir -p "$ZSH_EXTRAS"
 git clone https://github.com/zsh-users/antigen.git "$ZSH_EXTRAS/antigen"
 git clone https://github.com/chrstphrknwtn/pure.git "$ZSH_EXTRAS/pure"
 
-# rc
-for FILE in .zshrc .npmrc .vimrc
+# symlink config
+for FILE in .zshrc .gitignore .gitconfig
 do
   ln -s $DOTFILES/$FILE $HOME/$FILE
 done
@@ -18,22 +18,6 @@ done
 # ssh
 mkdir -p "$HOME/.ssh"
 ln -s $DOTFILES/.ssh/config $HOME/.ssh/config
-
-# atom
-mkdir -p "$HOME/.atom"
-for FILE in config.cson init.coffee keymap.cson snippets.cson styles.less
-do
-  ln -s $DOTFILES/.atom/$FILE $HOME/.atom/$FILE
-done
-
-# git
-for FILE in .gitignore .gitconfig
-do
-  ln -s $DOTFILES/$FILE $HOME/$FILE
-done
-
-# bin
-ln -s $DOTFILES/.bin $HOME
 
 # zsh pure
 mkdir -p "$HOME/.zfunctions"
