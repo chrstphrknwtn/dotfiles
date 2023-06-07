@@ -99,7 +99,7 @@ export LESS_TERMCAP_ue=$'\E[38;5;248m\E[24m' # grey; reset underline
 alias zshrc='o $HOME/.zshrc'
 
 # ls
-# alias l="lm" #https://github.com/chrstphrknwtn/lm
+alias l="lm" #https://github.com/chrstphrknwtn/lm
 alias ll="ls -lahG"
 
 # Flush DNS
