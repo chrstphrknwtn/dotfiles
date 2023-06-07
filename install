@@ -10,7 +10,7 @@ git clone https://github.com/zsh-users/antigen.git "$ZSH_EXTRAS/antigen"
 git clone https://github.com/chrstphrknwtn/pure.git "$ZSH_EXTRAS/pure"
 
 # symlink config
-for FILE in .zshrc .gitignore .gitconfig
+for FILE in .zshrc .npmrc .gitignore .gitconfig
 do
   ln -s $DOTFILES/$FILE $HOME/$FILE
 done
