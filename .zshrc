@@ -1,5 +1,6 @@
 # -----------------------------------------------------------------------------
-# antigen packages
+# zsh setup
+# -----------------------------------------------------------------------------
 
 source $HOME/.zsh/antigen/antigen.zsh
 antigen bundle zsh-users/zsh-syntax-highlighting
