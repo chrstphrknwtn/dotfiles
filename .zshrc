@@ -82,13 +82,6 @@ export PATH=$PATH:/usr/local/heroku/bin
 
 
 # -----------------------------------------------------------------------------
-# Exports
-# -----------------------------------------------------------------------------
-
-export EDITOR=atom
-
-
-# -----------------------------------------------------------------------------
 # z style
 # -----------------------------------------------------------------------------
 
@@ -122,9 +115,6 @@ alias zshrc='o $HOME/.zshrc'
 # ls
 alias l="lm" #https://github.com/chrstphrknwtn/lm
 alias ll="ls -lahG"
-
-# Open CWD in EDITOR
-alias o="$EDITOR ."
 
 # Flush DNS
 alias flushdns="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder"
