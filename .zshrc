@@ -136,10 +136,3 @@ z() {
   fi
 }
 
-# contentful-cli shortcut
-alias cf='contentful'
-alias nf='netlifyctl'
-
-# dev
-alias run='ns && yarn install && yarn run dev'
-
