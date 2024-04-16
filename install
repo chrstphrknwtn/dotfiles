@@ -5,7 +5,6 @@ DOTFILES="$HOME/.dotfiles"
 
 git clone https://github.com/chrstphrknwtn/dotfiles.git $DOTFILES
 
-# zsh
 mkdir -p "$ZSH_EXTRAS"
 git clone https://github.com/zsh-users/antigen.git "$ZSH_EXTRAS/antigen"
 git clone https://github.com/chrstphrknwtn/pure.git "$ZSH_EXTRAS/pure"
@@ -14,18 +13,8 @@ mkdir -p "$HOME/.zfunctions"
 ln -s "$ZSH_EXTRAS/pure/pure.zsh" "$HOME/.zfunctions/prompt_pure_setup"
 ln -s "$ZSH_EXTRAS/pure/async.zsh" "$HOME/.zfunctions/async"
 
-# rc
-for FILE in .zshrc .npmrc .vimrc
-do
-  ln -s $DOTFILES/$FILE $HOME/$FILE
-done
-
-# ssh
 mkdir -p "$HOME/.ssh"
-ln -s $DOTFILES/.ssh/config $HOME/.ssh/config
-
-# git
-for FILE in .gitignore .gitconfig
+for FILE in .zshrc .npmrc .gitignore .gitconfig .ssh/config
 do
   ln -s $DOTFILES/$FILE $HOME/$FILE
 done
