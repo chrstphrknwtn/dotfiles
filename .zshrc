@@ -9,13 +9,14 @@ antigen apply
 
 # -----------------------------------------------------------------------------
 # pure prompt
-
+# -----------------------------------------------------------------------------
 fpath=( "$HOME/.zfunctions" $fpath )
 autoload -U promptinit; promptinit
 prompt pure
 
 # -----------------------------------------------------------------------------
-# zsh config
+# Options
+# -----------------------------------------------------------------------------
 
 # History
 setopt extended_history
@@ -35,6 +36,11 @@ autoload -U down-line-or-beginning-search
 # mkdir -p $HOME/.z.data
 _Z_DATA=$HOME/.z.data/.z
 
+
+# -----------------------------------------------------------------------------
+# Keyboard Shortcuts
+# -----------------------------------------------------------------------------
+
 zle -N up-line-or-beginning-search
 zle -N searchup
 bindkey "^[[A" searchup
@@ -45,6 +51,11 @@ bindkey "^[[B" searchdown
 
 zle -N fancy-branch
 bindkey '^b' fancy-branch
+
+
+# ------------------------------------------------------------------------------
+# ZLE Functions
+# ------------------------------------------------------------------------------
 
 searchup() {
   zle up-line-or-beginning-search
@@ -58,6 +69,7 @@ searchdown() {
 
 # -----------------------------------------------------------------------------
 # Path
+# -----------------------------------------------------------------------------
 
 export PATH=$HOME/.npm-global/bin:$PATH
 export PATH=$PATH:/usr/local/bin
@@ -70,6 +82,13 @@ export PATH=$PATH:/usr/local/heroku/bin
 
 
 # -----------------------------------------------------------------------------
+# Exports
+# -----------------------------------------------------------------------------
+
+export EDITOR=atom
+
+
+# -----------------------------------------------------------------------------
 # z style
 # -----------------------------------------------------------------------------
 
@@ -77,7 +96,8 @@ zstyle ':completion:*:*:*:*:*' menu select
 
 
 # -----------------------------------------------------------------------------
-# less (man pages) colour / style
+# less (man pages) color / style
+# -----------------------------------------------------------------------------
 
 # Bold Mode
 export LESS_TERMCAP_md=$'\E[37m' # white
@@ -91,6 +111,7 @@ export LESS_TERMCAP_se=$'\E[0m' # reset all
 export LESS_TERMCAP_us=$'\E[4m' # underline
 export LESS_TERMCAP_ue=$'\E[38;5;248m\E[24m' # grey; reset underline
 
+
 # -----------------------------------------------------------------------------
 # Aliases
 # -----------------------------------------------------------------------------
@@ -101,6 +122,9 @@ alias zshrc='o $HOME/.zshrc'
 # ls
 alias l="lm" #https://github.com/chrstphrknwtn/lm
 alias ll="ls -lahG"
+
+# Open CWD in EDITOR
+alias o="$EDITOR ."
 
 # Flush DNS
 alias flushdns="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder"
@@ -121,3 +145,11 @@ z() {
     _z "$@"
   fi
 }
+
+# contentful-cli shortcut
+alias cf='contentful'
+alias nf='netlifyctl'
+
+# dev
+alias run='ns && yarn install && yarn run dev'
+
