@@ -86,6 +86,8 @@ alias hide='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder
 # .git suffix: paste raw ssh git url to clone
 alias -s git='git clone'
 
+alias g="git status -s" 
+
 # -----------------------------------------------------------------------------
 # Path
 
