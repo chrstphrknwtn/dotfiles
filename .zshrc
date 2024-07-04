@@ -86,7 +86,12 @@ alias hide='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder
 # .git suffix: paste raw ssh git url to clone
 alias -s git='git clone'
 
+# Git conveniences
+GIT_LOG_FMT='"%C(dim normal)%h %>(11)%ad %Creset· %<(52,trunc)%s %C(dim)%<(20,trunc)%cn%d"'
+GIT_LOG_DATE_FMT='"%a %d %b %Y"'
+
 alias g="git status -s" 
+alias gl="git log  -n 16 --pretty=format:$GIT_LOG_FMT --date=format:$GIT_LOG_DATE_FMT"
 
 # -----------------------------------------------------------------------------
 # Path
