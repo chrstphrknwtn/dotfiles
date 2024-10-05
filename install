@@ -18,3 +18,5 @@ for FILE in .zshrc .npmrc .gitignore .gitconfig .ssh/config
 do
   ln -s $DOTFILES/$FILE $HOME/$FILE
 done
+
+ln -s $DOTFILES/zed-settings.json $HOME/.config/zed/settings.json

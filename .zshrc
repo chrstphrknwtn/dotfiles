@@ -90,7 +90,7 @@ alias -s git='git clone'
 GIT_LOG_FMT='"%C(dim normal)%h %>(11)%ad %Creset· %<(52,trunc)%s %C(dim)%<(20,trunc)%cn%d"'
 GIT_LOG_DATE_FMT='"%a %d %b %Y"'
 
-alias g="git status -s" 
+alias g="git status -s"
 alias gl="git log  -n 16 --pretty=format:$GIT_LOG_FMT --date=format:$GIT_LOG_DATE_FMT"
 
 # -----------------------------------------------------------------------------
