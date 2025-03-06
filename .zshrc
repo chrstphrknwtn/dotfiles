@@ -104,6 +104,3 @@ export PATH=$PATH:/bin
 export PATH=$PATH:/sbin
 export PATH=$PATH:/usr/sbin
 export PATH=$PATH:$HOME/.zig
-
-export GOPATH=$HOME/.go
-export PATH=$PATH:$HOME/.go/bin
