@@ -73,7 +73,7 @@ export LESS_TERMCAP_ue=$'\E[38;5;248m\E[24m' # grey; reset underline
 # Aliases
 
 # ls
-alias l="lm" #https://github.com/chrstphrknwtn/lm
+alias l="list" #https://github.com/chrstphrknwtn/list
 alias ll="ls -lahG"
 
 # Flush DNS
